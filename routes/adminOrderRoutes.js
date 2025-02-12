@@ -8,7 +8,8 @@ router.get('/api/orders', async (req, res) => {
     try {
         const orders = await Order.find(); // MongoDB에서 모든 주문 조회
 
-        res.status(200).json(orders);
+        res.render('admin_list');
+        // res.status(200).json(orders);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }

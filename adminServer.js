@@ -1,8 +1,10 @@
 require('dotenv').config(); // 환경 변수 로드
 const express = require('express');
 const path = require('path');
+const cors = require('cors'); // CORS 에러 방지를 위해 추가
 const dbConnect = require('./config/dbConnect'); // 데이터베이스 연결 함수 불러오기
 const orderRoutes = require('./routes/adminOrderRoutes'); // 주문 관련 라우트 추가
+const postRoutes = require('./routes/postRoutes'); //게시글 관련 라우트 추가
 
 const app = express();
 const PORT = 8081;
@@ -13,23 +15,15 @@ dbConnect(); // MongoDB 연결
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors()); // 프론트엔드와 통신할 때 필요한 경우 추가
 
 
 app.use(express.json()); // JSON 요청을 처리하는 미들웨어
 app.use(express.urlencoded({ extended: true })); // 폼 데이터 파싱
 
-
 // 라우트 설정
 app.get('/main', (req, res) => {
     res.render('admin_main');
-});
-
-app.get('/admin_crud', (req, res) => {
-    res.render('admin_crud');
-});
-
-app.get('/admin_list', (req, res) => {
-    res.render('admin_list');
 });
 
 app.get('/admin_statistics', (req, res) => {
@@ -41,6 +35,10 @@ app.get('/logout', (req, res) => {
 });
 
 // **📌 주문 관련 라우트 (routes/orderRoutes.js에서 관리)**
+//app.use(orderRoutes); // routes/orderRoutes.js의 API 라우트 불러오기
+
+// **📌 게시글 관련 라우트 (routes/postRoutes.js에서 관리)**
+app.use(postRoutes); // routes/postRoutes.js의 API 라우트 불러오기
 app.use(orderRoutes); // routes/orderRoutes.js의 API 라우트 불러오기
 
 // 서버 실행
