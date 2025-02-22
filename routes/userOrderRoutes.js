@@ -2,13 +2,46 @@ const express = require('express');
 const Order = require('../models/order');
 const router = express.Router();
 const smtpTransport = require('../config/mailer');
+const multer = require('multer');
+const path = require('path');
 
-// **POST 요청: 새로운 주문 생성** 📌8080포트에서 필요
-router.post('/api/order', async (req, res) => {
+// Multer 설정: 파일을 public/uploads 폴더에 저장
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, 'public/uploads/');
+    },
+    filename: function (req, file, cb) {
+      const ext = path.extname(file.originalname).toLowerCase();
+      const newFilename = `${Date.now()}${ext}`;
+      cb(null, newFilename);
+    }
+  });
+  
+  // 업로드 미들웨어: 최대 5개, 파일 크기 제한 5MB
+  const upload = multer({ 
+    storage: storage, 
+    limits: { fileSize: 5 * 1024 * 1024 },
+  });
+
+router.post('/api/order', upload.array('attachments', 5), async (req, res) => {
     try {
-        const newOrder = new Order(req.body); // 요청 데이터로 Order 생성
-        await newOrder.save(); // MongoDB에 저장
-        console.log("주문요청 생성됨")
+        // 파일 업로드 처리
+        const files = req.files || [];
+        const fileUrls = files.map(file => `/uploads/${file.filename}`);
+
+        const newOrder = new Order({
+            customerName: req.body.customerName,
+            companyName: req.body.companyName,
+            companyPhone: req.body.companyPhone,
+            companyEmail: req.body.companyEmail,
+            orderType: req.body.orderType,
+            details: req.body.details,
+            privacyConsent: req.body.privacyConsent,
+            attachments: fileUrls,
+          });
+          
+         await newOrder.save();
+        console.log("주문요청 생성됨");
 
         //메일 전송 설정
         const adminEmail = process.env.ADMIN_EMAIL;
