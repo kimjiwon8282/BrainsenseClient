@@ -9,6 +9,7 @@ const csRoutes = require('./routes/csRoutes');
 
 const app = express();
 const port = 8080;
+const Post = require('./models/post');
 
 dbConnect(); // MongoDB 연결
 
@@ -19,6 +20,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.json()); // JSON 요청을 처리하는 미들웨어
 app.use(express.urlencoded({ extended: true })); // 폼 데이터 파싱
+
 //정적 파일 제공
 app.use('/uploads', express.static(path.join(__dirname, 'public', 'uploads')));
 

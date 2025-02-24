@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title><%= post.title %></title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1><%= post.title %></h1>
+      <p><%= new Date(post.createdAt).toLocaleDateString('ko-KR') %></p>
+
+      <% if (post.attachments && post.attachments.length > 0) { %>
+      <img
+        src="<%= post.attachments[0] %>"
+        alt="뉴스 이미지"
+        style="max-width: 100%"
+      />
+      <% } %>
+
+      <p><%= post.content %></p>
+
+      <a href="/cs/company/news">← 목록으로 돌아가기</a>
+    </div>
+  </body>
+</html>

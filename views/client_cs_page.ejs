@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회사 소식</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+    <style>
+      /* HERO 섹션 */
+      .hero {
+        background: url('/images/news-header.jpg') no-repeat center center;
+        background-size: cover;
+        height: 300px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      .hero h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+      }
+
+      /* 탭 메뉴 */
+      .tabs {
+        display: flex;
+        justify-content: center;
+        background: #333;
+        padding: 10px 0;
+      }
+      .tabs a {
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      .tabs .active {
+        background: #007bff;
+        border-radius: 5px;
+      }
+
+      /* 뉴스 리스트 */
+      .news-item {
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        border-bottom: 1px solid #ddd;
+      }
+      .news-item img {
+        width: 100px;
+        height: 100px;
+        background: #ccc;
+        margin-right: 15px;
+        object-fit: cover;
+      }
+      .news-item h2 {
+        font-size: 18px;
+        margin: 0;
+      }
+      .news-item small {
+        color: gray;
+      }
+      .news-item a {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+      }
+      .news-item a:hover {
+        color: #007bff;
+      }
+
+      /* 푸터 */
+      .footer {
+        background: #0a0f2d;
+        color: white;
+        padding: 20px 0;
+        margin-top: 30px;
+      }
+      .footer a {
+        color: white;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 네비게이션 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <div class="container">
+        <a class="navbar-brand" href="/">BRAVN SENSE</a>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#">기술</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">제품</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">기업</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">고객지원</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- HERO 섹션 -->
+    <div class="hero">
+      <h1>감각을 통한 일상 속의 새로운 변화</h1>
+    </div>
+
+    <!-- 탭 메뉴 -->
+    <div class="tabs">
+      <a href="#" class="">회사소개</a>
+      <a href="#" class="active">NEWS</a>
+      <a href="#">팀소개</a>
+    </div>
+
+    <!-- 뉴스 섹션 -->
+    <div class="container mt-5">
+      <h2 class="text-center">NEWS</h2>
+      <div class="news-list">
+        <% if (posts.length > 0) { %> <% posts.forEach(post => { %>
+        <div class="news-item">
+          <img
+            src="<%= post.attachments && post.attachments.length > 0 ? post.attachments[0] : '/images/placeholder.png' %>"
+            alt="뉴스 이미지"
+          />
+          <div>
+            <a href="/cs/company/news/<%= post._id %>">
+              <h2><%= post.title %></h2>
+            </a>
+            <small
+              ><%= new Date(post.createdAt).toLocaleDateString('ko-KR')
+              %></small
+            >
+          </div>
+        </div>
+        <% }) %> <% } else { %>
+        <p class="text-center text-muted">아직 등록된 뉴스가 없습니다.</p>
+        <% } %>
+      </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="f_body">
+      <div class="f_container">
+        <div class="f_left">
+          <div class="f_logo">
+            <img src="images/로고.png" alt="브레인센스로고" class="f_img" />
+            <p class="f_copy">Copyright © 브레인센스. All rights reserved.</p>
+          </div>
+          <div class="f_leftbottom">
+            <p>대표 | 김대기</p>
+            <p>사업자등록번호 | 000-00-00000</p>
+            <p>
+              주소 | 경상남도 밀양시 삼랑진읍 상랑진로 1268-50,부산대학교
+              창업보육센터 403호
+            </p>
+            <p>이메일 | brainsense412@naver.com</p>
+            <p>전화번호 | 010-9109-6401</p>
+          </div>
+        </div>
+        <div class="f_right">
+          <div class="f_content">
+            <h5 class="f_h5">기술</h5>
+            <p class="f_pcontent">전도성 패드</p>
+          </div>
+          <div class="f_content">
+            <h5 class="f_h5">기술</h5>
+            <p class="f_pcontent">압력센서</p>
+            <p class="f_pcontent">SafeNest</p>
+            <p class="f_pcontent">CATCHME</p>
+            <p class="f_pcontent">JEJE</p>
+          </div>
+          <div class="f_content">
+            <h5 class="f_h5">기술</h5>
+            <p class="f_pcontent">전도성 패드</p>
+          </div>
+          <div class="f_content">
+            <h5 class="f_h5">기술</h5>
+            <p class="f_pcontent">전도성 패드</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
