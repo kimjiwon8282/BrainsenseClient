@@ -1,0 +1,728 @@
+/* 메인 화면 */
+
+.a_firstPage {
+    height: 100vh;
+}
+
+/* 비디오 */
+.a_backgroundVideo {
+    position: absolute; /*비디오를 부모 컨테이너 안에서 절대 위치*/
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;/*부모요소 높이(100vh)에 맞춤*/
+    z-index: -1; /* 네비게이션 바 및 콘텐츠보다 뒤로 */
+}
+
+.a_backgroundVideo video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 비디오가 화면을 꽉 채우면서 비율 유지 */
+}
+
+.a_video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* 반투명 검은색 (0.5 = 50% 어두움) */
+    z-index: 0;
+}
+
+/* 메인 제목 */
+.a_content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 정확히 중앙 정렬 */
+    text-align: center;
+    color: white;
+    z-index: 1; /* 배경 비디오 위에 위치 */
+    width: 100%;
+    max-width: 900px; /* 텍스트 너비 제한 */
+}
+
+/* 제목 스타일 */
+.a_content h1 {
+    font-size: 44px;
+    font-weight: 700;
+}
+
+/* 서브 텍스트 스타일 */
+.a_content p {
+    font-size: 20px;
+    margin-top: 24px;
+    opacity: 0.8;
+}
+
+.b_secondPageContent {
+    /* border: 1px solid red; */
+    width: 1440px;
+    height: 576px;
+    margin: 79px auto;
+}
+
+.b_text {
+    /* border: 5px solid aqua; */
+    width: 77.8%;
+    height: 33.68%;
+    margin: 0 auto;
+}
+
+.b_textH1 {
+    /* border: 1px solid blue; */
+    width: 100%;
+    height: 44%
+}
+
+.b_partText {
+    color: #1261D4;
+    font-family: 'Pretendard';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 32.5%;
+    padding: 0;
+    margin: 0;
+    
+}
+.b_H1 {
+    /* border: 2px solid palegreen; */
+    font-size: 36px;
+    color: #111;
+    font-family: 'Pretendard';
+    font-weight: 600;
+    height: 58.1%;
+    padding: 0;
+    margin: 0;
+    margin-top: 8px;
+    line-height: 140%; /* 50.4px */
+    letter-spacing: -0.72px;
+}
+
+.b_Pcontent {
+    /* border: 1px solid brown; */
+    width: 28.75%;
+    height: 35.05%;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    margin-top: 40px;
+    color: #111;
+    font-family: 'Pretendard';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: -0.48px;
+    line-height: 140%; /* 33.6px */
+}
+
+.b_pictures {
+    margin-top: 5.6%;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 52.4%;
+    /* border: 1px solid black; */
+    gap: 3.5%;
+    padding: 0 11.1%; /* 좌우 여백 추가 */
+    box-sizing: border-box; /* ✅ 부모 크기 내에서 패딩을 포함하도록 설정 */
+    
+}
+
+.b_box {
+    flex: 1;
+   width: 340px;
+    height: 100%;
+    background-color: #EFEFEF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* 원형 아이콘 */
+.b_icon {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.b_icon img {
+    width: 70%;
+    height: 70%;
+}
+
+/* 텍스트 스타일 */
+.b_title {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: Pretendard;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%; /* 33.6px */
+    letter-spacing: -0.48px;
+}
+
+.b_description {
+    color: #111;
+    text-align: center;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 22.4px */
+    letter-spacing: -0.32px;
+}
+
+/* 애니메이션 */
+@keyframes highlightBox {
+    0%, 33% { background-color: #EFEFEF; }
+    34%, 66% { background-color: #1261D4; }
+    67%, 100% { background-color: #EFEFEF; }
+}
+
+/* 텍스트 색상 변경 애니메이션 */
+@keyframes textColorChange {
+    0%, 33% { color: #111; }
+    34%, 66% { color: white; }
+    67%, 100% { color: #111; }
+}
+
+/* 박스 배경 애니메이션 적용 */
+.b_box:nth-child(1) {
+    animation: highlightBox 9s infinite;
+}
+
+.b_box:nth-child(2) {
+    animation: highlightBox 9s infinite 3s;
+}
+
+.b_box:nth-child(3) {
+    animation: highlightBox 9s infinite 6s;
+}
+
+/* 텍스트 색상 변경 애니메이션 적용 */
+.b_box:nth-child(1) .b_title,
+.b_box:nth-child(1) .b_description {
+    animation: textColorChange 9s infinite;
+}
+
+.b_box:nth-child(2) .b_title,
+.b_box:nth-child(2) .b_description {
+    animation: textColorChange 9s infinite 3s;
+}
+
+.b_box:nth-child(3) .b_title,
+.b_box:nth-child(3) .b_description {
+    animation: textColorChange 9s infinite 6s;
+}
+
+
+.c_thirdPageContent {
+    /* border: 1px solid red; */
+    width: 1440px;
+    height: 1544px;
+    margin: 0 auto;
+    margin-top: 200px;
+}
+
+.c_textH1 {
+    /* border: 1px solid blue; */
+    width: 1120px;
+    height: 86px;
+    margin-left: 160px;
+}
+
+.c_partText {
+    color: #1261D4;
+    font-family: 'Pretendard';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 32.5%;
+    padding: 0;
+    margin: 0;
+    line-height: 140%; /* 28px */
+    letter-spacing: -0.4px;
+}
+
+.c_H1 {
+    /* border: 2px solid palegreen; */
+    font-size: 36px;
+    color: #111;
+    font-family: 'Pretendard';
+    font-weight: 600;
+    height: 58.1%;
+    padding: 0;
+    margin: 0;
+    margin-top: 8px;
+    line-height: 140%;
+    letter-spacing: -0.72px;
+}
+
+.c_background-section {
+    /* border: 3px solid brown; */
+    position: relative;
+    width: 1440px;
+    height: 1417.83911px;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+    align-self: stretch;
+    background-image: url('/YJYimages/d_pageimg.png'); 
+    margin-top: 40px;
+
+    /* 배경색을 #F5F5F5로 설정하여 그라데이션과 자연스럽게 연결 */
+    background-color: #F5F5F5;
+
+    /* 중앙에서 사방으로 흐려지는 효과 적용 */
+    background-image: 
+        radial-gradient(circle, 
+            rgba(245, 245, 245, 0) 30%,  /* 중앙은 투명 (배경 이미지 유지) */
+            rgba(245, 245, 245, 0.3) 50%,  /* 중간 영역: 점점 밝아짐 */
+            rgba(245, 245, 245, 0.6) 70%,  /* 바깥 영역: 더 밝아짐 */
+            #F5F5F5 100%  /* 가장자리: 완전히 배경색과 동일 */
+        ),
+        url('/YJYimages/d_pageimg.png');
+        
+    -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+    mask-image: radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+    z-index: 0;
+}
+
+
+.c_Pcontent {
+    width: 30.13%;
+    height: 4.79%;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    color: #111;
+    font-family: 'Pretendard';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: -0.48px;
+    line-height: 140%;
+    margin-left: 160px;
+    z-index: 1;
+}
+
+.c_containers {
+    margin: 0;
+    padding: 0;
+    width: 756px;
+    height: 1060px;
+    /* border: 1px solid purple; */
+    flex-shrink: 0;
+    display: flex;
+    gap: 36px;
+    margin-top: 100px;
+    margin-left: 524px;
+}
+
+.c_Acontainers {
+    margin: 0;
+    padding: 0;
+    /* border: 2px solid darkblue; */
+    display: flex;
+    width: 360px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 120px;
+}
+
+.c_Bcontainers {
+    margin: 0;
+    padding: 0;
+    /* border: 2px solid aqua; */
+    display: flex;
+    width: 360px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 120px;
+    padding-top: 160px;
+}
+
+.c_box {
+    /* border: 1px solid black; */
+    width: 360px;
+    height: 220px;
+    flex-shrink: 0;
+    background: #FFF;
+    box-shadow: 0px 4px 12px 2px rgba(0, 0, 0, 0.04);
+}
+
+.c_boxH3 {
+    color: #111;
+    font-family: Pretendard;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 28px */
+    letter-spacing: -0.4px;
+    /* border: 1px solid green; */
+    width: 90px;
+    height: 28px;
+    margin-top: 36px;
+    margin-left: 40px;
+}
+
+.c_boxP {
+    color: #767676;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 22.4px */
+    letter-spacing: -0.32px;
+    /* border: 1px solid gray; */
+    width: 205px;
+    height: 66px;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+
+/* 전체 컨테이너 스타일 */
+.d_container {
+    width: 1440px;
+    height: 646px;
+    margin: 0 auto;
+    margin-top: 200px;
+    /* border: 1px solid black; */
+    
+}
+
+.d_topcontent{
+    /* border: 1px solid aqua; */
+    width: 77.8%;
+    height: 13.3%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* product */
+.d_highlight {
+    color: #1261D4;
+    font-size: 20px;
+
+    /* border: 1px solid red; */
+    height: 32.6%;
+    margin-top: 0;
+    margin: 0;
+    align-content: center;
+}
+
+
+/* AIOT */
+h2 {
+    font-weight: 600;
+    color: #000;
+    font-size: 36px;
+    text-align: left;
+    /* border: 1px solid blue; */
+    height: 58.1%;
+    margin-top: 0.7%;
+    align-content: center;
+}
+
+
+
+/* 제품 목록 스타일 */
+.d_product-list {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    width: 73.1%;
+    gap: 1.5%;
+    /* border: 3px solid blue; */
+    margin-top: 2.8%;
+    height: 80.5%;
+}
+
+/* 제품 카드 스타일 */
+.d_product {
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    border-radius: 0;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /*입체감*/
+}
+
+/* 제품 이미지 스타일 */
+.d_product img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0; /* 이미지를 배경으로 설정 */
+}
+.d_product::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    z-index: 1; /* 오버레이를 이미지 위로 올리기 */
+}
+.d_product-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: white;
+    text-align: left;
+    z-index: 2;
+}
+
+
+
+.d_product-description {
+    font-size: 16px;
+    margin-left:32px;
+}
+
+
+.d_product-title {
+    margin-top: 6px;
+    font-size: 20px;
+    margin-left:32px;
+    margin-bottom: 32px;
+}
+
+.d_product-hover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;/*기본상태에서 안 보이게*/
+    transition: opacity 0.3s ease; /*부드럽게 나타나도록 시간 조정*/
+    z-index: 2; /*오버레이 순서*/
+}
+.d_product:hover .d_product-hover {
+    opacity: 1;
+}
+.d_product-button {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #FFF;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 22.4px */
+    letter-spacing: -0.32px;
+}
+
+
+.d_product {
+    position: relative;
+    overflow: hidden; /* 배경이 넘치지 않도록 설정 */
+}
+
+/* 마우스를 올리면 배경이 10% 하얗게 변함 */
+.d_product::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0); /* 기본 상태: 완전 투명 */
+    transition: background-color 0.3s ease; /* 부드럽게 변하도록 설정 */
+    z-index: 1; /* 버튼보다 뒤쪽에 배치 */
+}
+
+.d_product:hover::before {
+    background-color: rgba(255, 255, 255, 0.3); /* 10% 하얗게 변경 */
+}
+body {
+    font-family: 'Pretendard', sans-serif;
+    margin: 0;
+    padding: 0;
+    padding-top: 81px; /* 네비게이션 바 높이만큼 여백 추가 */
+    box-sizing: border-box;
+    background-color: #F5F5F5;
+}
+
+
+
+
+
+
+
+/* 두번째 페이지 */
+/* .b_secondPage{
+    border: 3px solid black;
+    width: 100vw;
+    height: 90vh;
+    background-color: #f9f9f9;
+} */
+
+
+.f_body{
+    width: 100vw;
+    height: 320px;
+    background-color: #112138;
+    margin-top: 460px;
+    color: white;
+  }
+  
+  .f_container{
+    margin: 0 auto;
+    width: 1440px;
+    height: 320px;
+    /* border: 1px solid aqua; */
+    display: flex;
+  }
+  
+  .f_left{
+    width: 463px;
+    margin-top: 40px;
+    margin-left: 100px;
+    /* border: 1px solid red; */
+  }
+  
+  
+  .f_logo{
+    width: 183px ;
+    height: 45px;
+    text-align: left;
+    /* border: 1px solid white; */
+    margin-bottom: 47px;
+  }
+  
+  .f_img { 
+    width: 120px;
+    height: 16.678px;
+    aspect-ratio: 120.00/16.68;
+    padding-bottom: 8px;
+    /* border: 1px solid white; */
+  }
+  
+  .f_copy{
+    margin: 0;
+    color: #767676;
+    font-size: 10px;
+    letter-spacing: -0.2px;
+    /* border: 1px solid white; */
+    
+  }
+  
+  .f_leftbottom{
+    color: #FFF;
+    font-family: Pretendard;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 140%; /* 19.6px */
+    letter-spacing: -0.28px;
+    /* border: 1px solid white; */
+  }
+  
+  .f_right{
+    margin-left: 275px;
+    margin-top: 75.5px;
+    width: 484px;
+    height: 169px;
+    /* border: 1px solid aqua; */
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 28px;
+  
+  }
+  
+  .f_content{
+    /* border: 1px solid red; */
+    width: 100px;
+  }
+  
+  .f_h5 {
+    margin: 0;
+    /* border: 1px solid yellow; */
+    color: #FFF;
+    font-family: Pretendard;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%; /* 25.2px */
+    letter-spacing: -0.36px;
+  }
+  
+  .f_pcontent {
+    margin: 0;
+    /* border: 1px solid white; */
+    color: #FFF;
+    font-family: Pretendard;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 140%; /* 19.6px */
+    letter-spacing: -0.28px;
+    margin-top: 16px;
+  }
+
+  /* navbar */
+.header {
+    display: flex; /*내부요소를 가로로 정렬*/
+    justify-content: space-between; /*로고와 메뉴를 양끝으로 정렬*/
+    align-items: center; /*내부 요소들을 수직 중앙 정렬 */
+    width: 100%; 
+    height: 81px;
+    background-color: #F5F5F5;  
+    position: fixed; /*항상 위에 고정*/
+    top:0;
+    z-index: 1000;/* 다른 요소들 위에 위치하도록 설정 */
+
+}
+
+/* 로고 */
+.logo img {
+    width: 144px;
+    height: 31.29px;
+    margin: 24.86px;
+    margin-left: 42px;
+    z-index: 1;
+}
+
+/* 네비게이션 목록 */
+.navlinks {
+    list-style: none; /*점 안 보이는거*/
+    display: flex;
+    gap: 76px; /*간격*/
+    padding-right: 56px;
+}
+
+.navlinks a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #111;
+    font-weight: 400;
+}

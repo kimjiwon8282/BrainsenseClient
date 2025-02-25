@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Post = require('../models/post');
 
+<<<<<<< HEAD
 router.get('/company/news', async (req, res) => {
   try {
     //최신순 정렬
@@ -13,6 +14,10 @@ router.get('/company/news', async (req, res) => {
     console.error('게시글 조회 오류', err);
     res.status(500).send('서버 오류');
   }
+=======
+router.get('/ask',(req,res)=>{
+    res.render('csAsk.ejs');
+>>>>>>> origin/client_jiwon
 });
 
 // 뉴스 상세 페이지
