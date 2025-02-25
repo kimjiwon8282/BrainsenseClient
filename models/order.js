@@ -7,7 +7,7 @@ const orderSchema = new mongoose.Schema({
   companyEmail: { type: String, required: true }, // 회사 이메일
   orderType: {
     type: String,
-    enum: ['제품 및 서비스', '외주', '협력 및 제안','기타'],
+    enum: ['제품 및 서비스', '외주', '협력 및 제안', '기타'],
     required: true,
   }, // 외주 유형
   details: { type: String, required: true }, // 세부 문의 사항
