@@ -72,7 +72,7 @@ router.post('/api/order', upload.array('attachments', 5), async (req, res) => {
         });
 
         res.status(201).json({ 
-            message: '✅ Order created successfully', 
+            message: '문의가 성공적으로 완료되었습니다!', 
             data: newOrder 
         });
     } catch (error) {
