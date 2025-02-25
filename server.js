@@ -34,7 +34,7 @@ app.use('/cs', csRoutes);
 app.use(postRoutes);
 
 app.get('/home', (req, res) => {
-  res.send('사용자 메인페이지');
+  res.render('home', { title: 'Brainsense' }); // title 값을 전달
 });
 
 app.get('/tech', (req, res) => {
