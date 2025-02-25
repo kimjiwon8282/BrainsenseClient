@@ -6,6 +6,7 @@ const orderRoutes = require('./routes/userOrderRoutes'); // 주문 관련 라우
 const productRoutes = require('./routes/productRoutes');
 const companyRoutes = require('./routes/companyRoutes');
 const csRoutes = require('./routes/csRoutes');
+const postRoutes = require('./routes/postRoutes');
 
 const app = express();
 const port = 8080;
@@ -30,6 +31,7 @@ app.use(orderRoutes); // routes/orderRoutes.js의 API 라우트 불러오기
 app.use('/product', productRoutes);
 app.use('/company', companyRoutes);
 app.use('/cs', csRoutes);
+app.use(postRoutes);
 
 app.get('/home', (req, res) => {
   res.send('사용자 메인페이지');
