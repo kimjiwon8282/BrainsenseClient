@@ -28,15 +28,14 @@ app.use('/uploads', express.static(path.join(__dirname, 'public', 'uploads')));
 // **📌 주문 관련 라우트 (routes/orderRoutes.js에서 관리)**
 app.use(orderRoutes); // routes/orderRoutes.js의 API 라우트 불러오기
 
-app.use('/product', productRoutes);
+app.use('/products', productRoutes);
 app.use('/company', companyRoutes);
 app.use('/cs', csRoutes);
 app.use(postRoutes);
 
 app.get('/home', (req, res) => {
-  res.render('home', { title: 'Brainsense' }); // title 값을 전달
+  res.render('home');
 });
-
 app.get('/tech', (req, res) => {
   res.send('tech페이지');
 });
