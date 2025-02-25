@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router();
 
 router.get('/ask',(req,res)=>{
-    res.send("1:1 문의");
+    res.render('csAsk.ejs');
 });
 
 router.get('/faq',(req,res)=>{
