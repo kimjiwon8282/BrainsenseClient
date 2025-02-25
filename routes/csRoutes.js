@@ -2,22 +2,8 @@ const express = require('express');
 const router = express.Router();
 const Post = require('../models/post');
 
-<<<<<<< HEAD
-router.get('/company/news', async (req, res) => {
-  try {
-    //최신순 정렬
-    const posts = await Post.find({}).sort({ createdAt: -1 });
-
-    //posts 템플릿에 데이터를 전달해서 렌더링하기
-    res.render('client_cs_page', { posts });
-  } catch (err) {
-    console.error('게시글 조회 오류', err);
-    res.status(500).send('서버 오류');
-  }
-=======
-router.get('/ask',(req,res)=>{
-    res.render('csAsk.ejs');
->>>>>>> origin/client_jiwon
+router.get('/ask', (req, res) => {
+  res.render('csAsk.ejs');
 });
 
 // 뉴스 상세 페이지
