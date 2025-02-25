@@ -1,115 +1,178 @@
 /* 사진과 배경 이미지를 어울리게 만들기 위한 컨테이너 */
 .cs_introPage {
-    height: 619px;
-    width: 100vw;
-    background: linear-gradient(to bottom, #F8F8F8, #FEFEFE);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-    position: relative;
+  height: 619px;
+  width: 100vw;
+  background: linear-gradient(to bottom, #f8f8f8, #fefefe);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
 }
 /* 이미지+오버레이 컨테이너 */
 .cs_introimg {
-    text-align: center;
-    box-shadow: 0px 0px 100px 50px rgba(254, 254, 254, 0.8);
+  text-align: center;
+  box-shadow: 0px 0px 100px 50px rgba(254, 254, 254, 0.8);
+}
+.cs_f_h1 {
+  margin: 80px auto;
+  width: 1200px;
+  height: 90.8px;
+  border-bottom: 0.5px solid #767676;
+  text-align: center;
+  color: #111111;
+  font-size: 36px;
+  font-family: Pretendard;
+  font-weight: 600;
+  line-height: 50.4px;
+  word-wrap: break-word;
 }
 /* 배경이미지 */
-.cs_introimg img{
-    width: 1440px;
-    height: 100%;
-    object-fit: cover;
-    display: inline-block;
+.cs_introimg img {
+  width: 1440px;
+  height: 100%;
+  object-fit: cover;
+  display: inline-block;
+}
+.first {
+  /* border: 1px solid white; */
+  width: 360px;
+  height: 72px;
+  letter-spacing: -0.28px;
+}
+.second {
+  position: absolute;
+  /* border: 1px solid white; */
+  margin: 0;
+  width: 62px;
+  padding: 22px 149px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background-color: #1261d4;
+}
+#third {
+  padding: 22px 124.5px;
+  width: 111px;
+  background-color: #76767666;
 }
 /* 오버레이추가 */
 .cs_img-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* 반투명 검은색 (0.5 = 50% 어두움) */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* 반투명 검은색 (0.5 = 50% 어두움) */
 }
-
 
 /* 메인 텍스트 */
 .cs_content {
-    position: absolute;
-    top: 197px;
-    width: 588px;
-    height: 144px;
-    text-align: center;
-    /* border: 1px solid red; */
-    color: white;
-    gap: 24px;
+  position: absolute;
+  top: 197px;
+  width: 588px;
+  height: 144px;
+  text-align: center;
+  /* border: 1px solid red; */
+  color: white;
+  gap: 24px;
 }
 /* 메인 텍스트의 제목 */
 .cs_content h1 {
-    font-size: 44px;
-    font-weight: 700;
+  font-size: 44px;
+  font-weight: 700;
 }
 /* 메인 텍스트의 문딘 */
 .cs_content p {
-    font-size: 20px;
-    margin-top: 24px;
-    opacity: 0.8;
+  font-size: 20px;
+  margin-top: 24px;
+  opacity: 0.8;
 }
 
 /* form 콘텐츠 */
 
 /* form title  */
 .cs_form_title {
-    border-bottom: 0.5px solid #767676;
-    width: 1200px;
-    height: 125px;
-    text-align: center;
-    margin: 0 auto;
-    margin-top: 80px;
+  border-bottom: 0.5px solid #767676;
+  width: 1200px;
+  height: 125px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 80px;
 }
 /* form title 제목 */
 .cs_form_title h2 {
-    color: #111;
-    text-align: center;
-    font-size: 36px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 140%; /* 50.4px */
-    letter-spacing: -0.72px;
-    margin-bottom: 0;
+  color: #111;
+  text-align: center;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; /* 50.4px */
+  letter-spacing: -0.72px;
+  margin-bottom: 0;
 }
 /* form title 문단 */
 .cs_form_title p {
-    color: #767676;
-    text-align: center;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 140%; /* 22.4px */
-    letter-spacing: -0.32px;
-    margin-top: 12px;
+  color: #767676;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 22.4px */
+  letter-spacing: -0.32px;
+  margin-top: 12px;
 }
 
+/* form title  */
+.cs_form_title {
+  border-bottom: 0.5px solid #767676;
+  width: 1200px;
+  height: 125px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+/* form title 제목 */
+.cs_form_title h2 {
+  color: #111;
+  text-align: center;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; /* 50.4px */
+  letter-spacing: -0.72px;
+  margin-bottom: 0;
+}
+/* form title 문단 */
+.cs_form_title p {
+  color: #767676;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 22.4px */
+  letter-spacing: -0.32px;
+  margin-top: 12px;
+}
 
 /* form 질문들 */
 .cs_form_contents {
-    /* border: 1px solid brown; */
-    width: 858px;
-    height: 1028px;
-    margin: 0 auto;
-    margin-top: 80.83px;
-    display: block;
+  /* border: 1px solid brown; */
+  width: 858px;
+  height: 1028px;
+  margin: 0 auto;
+  margin-top: 80.83px;
+  display: block;
 }
-
 
 /* form 개별 질문 클래스 */
 .cs_form_category {
-    /* border: 1px solid blue; */
-    height: 54px;
-    width: 100%;
-    display: flex;
-    margin-top: 40px;
+  /* border: 1px solid blue; */
+  height: 54px;
+  width: 100%;
+  display: flex;
+  margin-top: 40px;
 }
-
 
 /* 라디오버튼 관련 */
 /* 종류 선택하는 라디오 버튼  */
@@ -126,45 +189,41 @@
   line-height: 140%; /* 28px */
   letter-spacing: -0.4px;
   display: flex;
-  align-items: center; 
+  align-items: center;
 }
-
 
 /* form 카테고리 목록 이름 */
 .cs_form_category_title {
-    width: 90px;
-    color: #111;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 140%; /* 28px */
-    letter-spacing: -0.4px;
-    display: flex;
-    align-items: center; 
-    /* border: 1px solid blue; */
+  width: 90px;
+  color: #111;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; /* 28px */
+  letter-spacing: -0.4px;
+  display: flex;
+  align-items: center;
+  /* border: 1px solid blue; */
 }
-
 
 /* 필수 항목 표시 */
-.cs_essential_list ::after{
-    content: " *";
-    color: #1261D4;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 140%; /* 28px */
-    letter-spacing: -0.4px;
+.cs_essential_list ::after {
+  content: ' *';
+  color: #1261d4;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; /* 28px */
+  letter-spacing: -0.4px;
 }
-
 
 /* 내용 적는곳 (라디오버튼 텍스트 에리어 첨부파일도 포함) */
 .cs_form_content {
-    display: flex;
-    width: 720px;
-    height: 100%;
-    margin-left: 40px;
+  display: flex;
+  width: 720px;
+  height: 100%;
+  margin-left: 40px;
 }
-
 
 /* 텍스트 입력 칸 */
 .cs_form_text {
@@ -176,11 +235,11 @@
   letter-spacing: -0.4px;
   /* 텍스트박스 클릭시 굵은 border 없앰. */
   outline: none;
-  border: 1px solid #C8C8C8;
+  border: 1px solid #c8c8c8;
 }
 /* 텍스트 입력 placeholder */
 .cs_form_text::placeholder {
-  color: #C8C8C8;
+  color: #c8c8c8;
   font-size: 20px;
   font-style: normal;
   font-weight: 400px;
@@ -188,10 +247,9 @@
   letter-spacing: -0.4px;
 }
 
-
 /* 텍스트에리어 영역*/
 /* 내용 컨테이너 크기 정하기(텍스트에리어 들어갈거) */
-#cs_form_contentinput{
+#cs_form_contentinput {
   align-items: start;
   margin-bottom: 200px;
 }
@@ -206,7 +264,7 @@ textarea {
 }
 /* 텍스트에리어 placeholder */
 textarea::placeholder {
-  color: #C8C8C8;  
+  color: #c8c8c8;
   font-family: 'pretendard', sans-serif;
   font-size: 20px;
   font-style: normal;
@@ -246,7 +304,7 @@ textarea::placeholder {
   color: #666;
   flex: 1;
   position: relative;
-  width:572px;
+  width: 572px;
   box-sizing: border-box;
   height: 54px;
   margin-left: 48px;
@@ -308,7 +366,7 @@ textarea::placeholder {
 }
 .cs_file_list li a {
   text-decoration: none;
-  color: #007BFF;
+  color: #007bff;
 }
 .cs_file_list li a:hover {
   text-decoration: underline;
@@ -329,37 +387,37 @@ textarea::placeholder {
 .delete-btn:hover {
   background-color: darkred;
 }
-
-
+.cs_path {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  display: flex;
+  /* border: 3px solid aquamarine; */
+  position: absolute;
+  margin-top: 547px;
+  width: 720px;
+  height: 72px;
+  color: white;
+  word-wrap: break-word;
+}
 /* 제출버튼 개인정보동의 묶은 컨테이너 */
 .cs_agree_submit {
-    position: absolute;
-    margin-top: 100px;
-    /* border: 1px solid brown; */
-}    
+  position: absolute;
+  margin-top: 100px;
+  /* border: 1px solid brown; */
+}
 /* 개인정보동의 */
 .cs_form_agree {
   /* border: 3px solid #111; */
   margin-left: 138px;
   height: 28px;
-}  
+}
 /* 개인정보동의 글 스타일 */
-.cs_formagree_text{
+.cs_formagree_text {
   color: #111;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: 140%;
   letter-spacing: -0.4px;
-}    
-
-
-
-
-
-
-
-  
-  
-
-
+}

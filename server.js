@@ -39,6 +39,9 @@ app.get('/home', (req, res) => {
 app.get('/tech', (req, res) => {
   res.send('tech페이지');
 });
+// app.get('/cs', (req, res) => {
+//   res.render('csFaq');
+// });
 
 app.listen(port, () => {
   console.log(`main server listening on port ${port}`);

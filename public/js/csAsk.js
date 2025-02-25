@@ -17,7 +17,7 @@ csUploadBtn.addEventListener('click', () => {
 attachmentsInput.addEventListener('change', (event) => {
   handleFiles(event.target.files);
   // input.value 초기화 (같은 파일 재선택 가능)
-  attachmentsInput.value = "";
+  attachmentsInput.value = '';
 });
 
 // 드래그 앤 드롭 이벤트 처리
@@ -42,7 +42,7 @@ function handleFiles(files) {
   for (let i = 0; i < files.length; i++) {
     // 최대 5개 제한 확인
     if (selectedFiles.length >= 5) {
-      alert("최대 5개까지 업로드 가능합니다.");
+      alert('최대 5개까지 업로드 가능합니다.');
       break;
     }
     selectedFiles.push(files[i]);
@@ -52,23 +52,23 @@ function handleFiles(files) {
 
 // 파일 목록 UI 업데이트 함수
 function updateFileList() {
-  csFileList.innerHTML = "";
+  csFileList.innerHTML = '';
   if (selectedFiles.length === 0) {
     const li = document.createElement('li');
-    li.textContent = "선택된 파일이 없습니다.";
+    li.textContent = '선택된 파일이 없습니다.';
     csFileList.appendChild(li);
   } else {
     selectedFiles.forEach((file, index) => {
       const li = document.createElement('li');
       // 파일 미리보기용 URL 생성 (옵션)
       const fileURL = URL.createObjectURL(file);
-      
+
       // 파일명과 크기를 보여주는 링크
       const a = document.createElement('a');
       a.href = fileURL;
       a.textContent = `${file.name} (${Math.round(file.size / 1024)} KB)`;
-      a.target = "_blank";
-      
+      a.target = '_blank';
+
       // 삭제 버튼 생성
       const deleteBtn = document.createElement('button');
       deleteBtn.textContent = '삭제';
@@ -80,7 +80,7 @@ function updateFileList() {
         // 생성된 object URL 해제 (메모리 누수 방지)
         URL.revokeObjectURL(fileURL);
       });
-      
+
       li.appendChild(a);
       li.appendChild(deleteBtn);
       csFileList.appendChild(li);
@@ -97,37 +97,46 @@ csForm.addEventListener('submit', async (e) => {
 
   // selectedFiles 배열의 파일들을 "attachments" 필드에 추가
   selectedFiles.forEach((file) => {
-    formData.append("attachments", file);
+    formData.append('attachments', file);
   });
 
   // 나머지 텍스트 필드와 라디오, 체크박스 값을 FormData에 추가
   const orderType = csForm.querySelector('input[name="orderType"]:checked');
-  if (orderType) formData.append("orderType", orderType.value);
-  formData.append("customerName", document.getElementById("customerName").value);
-  formData.append("companyName", document.getElementById("companyName").value);
-  formData.append("companyPhone", document.getElementById("companyPhone").value);
-  formData.append("companyEmail", document.getElementById("companyEmail").value);
-  formData.append("details", document.getElementById("details").value);
-  
+  if (orderType) formData.append('orderType', orderType.value);
+  formData.append(
+    'customerName',
+    document.getElementById('customerName').value
+  );
+  formData.append('companyName', document.getElementById('companyName').value);
+  formData.append(
+    'companyPhone',
+    document.getElementById('companyPhone').value
+  );
+  formData.append(
+    'companyEmail',
+    document.getElementById('companyEmail').value
+  );
+  formData.append('details', document.getElementById('details').value);
+
   // 개인정보 동의 (체크박스)
-  const privacyConsent = document.getElementById("privacyConsent").checked;
-  formData.append("privacyConsent", privacyConsent ? "true" : "false");
+  const privacyConsent = document.getElementById('privacyConsent').checked;
+  formData.append('privacyConsent', privacyConsent ? 'true' : 'false');
 
   try {
     // AJAX 요청: 백엔드 /api/order로 POST 전송
-    const response = await fetch("/api/order", {
-      method: "POST",
+    const response = await fetch('/api/order', {
+      method: 'POST',
       body: formData,
     });
     const data = await response.json();
 
     if (response.ok) {
       alert(data.message);
-      window.location.href = "/cs/ask"; // 성공 후 문의 폼 페이지로 이동
+      window.location.href = '/cs/ask'; // 성공 후 문의 폼 페이지로 이동
     } else {
-      alert("오류가 발생했습니다: " + data.error);
+      alert('오류가 발생했습니다: ' + data.error);
     }
   } catch (error) {
-    alert("제출에 실패했습니다: " + error.message);
+    alert('제출에 실패했습니다: ' + error.message);
   }
 });
