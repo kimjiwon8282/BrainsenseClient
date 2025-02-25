@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>고객지원</title>
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/csFaq.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+    <!-- jQuery CDN 추가 (헤드 또는 바디 끝에 추가) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <script>
+    $(document).ready(function () {
+      $('.faq-question').click(function () {
+        var $faqItem = $(this).parent();
+
+        if ($faqItem.hasClass('active')) {
+          $faqItem.removeClass('active').find('.faq-answer').slideUp(300);
+        } else {
+          $('.faq-item').removeClass('active').find('.faq-answer').slideUp(300);
+          $faqItem.addClass('active').find('.faq-answer').slideDown(300);
+        }
+      });
+    });
+  </script>
+  <body>
+    <%- include('partials/header', {title : "csFaq"}) %>
+
+    <!-- A페이지 -->
+    <div class="cs_introPage">
+      <!-- 배경이미지 -->
+      <div class="cs_introimg">
+        <img src="images/cs_intro_bg.jpg" alt="인트로 이미지" />
+        <!-- ✅ 오버레이 추가 -->
+        <div class="cs_img-overlay"></div>
+      </div>
+      <div class="cs_content">
+        <p>고객지원</p>
+        <h1>무엇이든지 편하게 물어봐주세요</h1>
+      </div>
+      <div class="cs_path">
+        <div class="first">
+          <a href="csAsk.ejs" target="_self" class="second">1:1 문의</a>
+        </div>
+        <div class="first">
+          <a href="csFaq.ejs" id="third" class="second">자주 묻는 질문</a>
+        </div>
+      </div>
+    </div>
+    <div class="cs_f_h1">자주 묻는 질문</div>
+
+    <div class="accordion">
+      <div class="faq-item">
+        <div class="faq-question">
+          질문의 제목을 적는 곳입니다?
+          <span class="arrow"><img src="./images/icon-down.svg" alt="" /></span>
+        </div>
+        <div class="faq-answer">
+          답변을 적는 곳입니다. 답변을 적는 곳입니다. 답변을 적는 곳입니다.
+          답변을 적는 곳입니다. 답변을 적는 곳입니다. 답변을 적는 곳입니다.
+          답변을 적는 곳입니다. 답변을 적는 곳입니다.
+        </div>
+      </div>
+    </div>
+    <div class="accordion">
+      <div class="faq-item">
+        <div class="faq-question">
+          질문의 제목을 적는 곳입니다?
+          <span class="arrow"><img src="./images/icon-down.svg" alt="" /></span>
+        </div>
+        <div class="faq-answer">
+          답변을 적는 곳입니다. 답변을 적는 곳입니다. 답변을 적는 곳입니다.
+          답변을 적는 곳입니다. 답변을 적는 곳입니다. 답변을 적는 곳입니다.
+          답변을 적는 곳입니다. 답변을 적는 곳입니다.
+        </div>
+      </div>
+    </div>
+    <div class="accordion">
+      <div class="faq-item">
+        <div class="faq-question">
+          질문의 제목을 적는 곳입니다?
+          <span class="arrow"><img src="./images/icon-down.svg" alt="" /></span>
+        </div>
+        <div class="faq-answer">
+          답변을 적는 곳입니다. 답변을 적는 곳입니다. 답변을 적는 곳입니다.
+          답변을 적는 곳입니다. 답변을 적는 곳입니다. 답변을 적는 곳입니다.
+          답변을 적는 곳입니다. 답변을 적는 곳입니다.
+        </div>
+      </div>
+    </div>
+    <div class="accordion">
+      <div class="faq-item">
+        <div class="faq-question">
+          질문의 제목을 적는 곳입니다?
+          <span class="arrow"><img src="./images/icon-down.svg" alt="" /></span>
+        </div>
+        <div class="faq-answer">
+          답변을 적는 곳입니다. 답변을 적는 곳입니다. 답변을 적는 곳입니다.
+          답변을 적는 곳입니다. 답변을 적는 곳입니다. 답변을 적는 곳입니다.
+          답변을 적는 곳입니다. 답변을 적는 곳입니다.
+        </div>
+      </div>
+    </div>
+    <div class="accordion">
+      <div class="faq-item">
+        <div class="faq-question">
+          질문의 제목을 적는 곳입니다?
+          <span class="arrow"><img src="./images/icon-down.svg" alt="" /></span>
+        </div>
+        <div class="faq-answer">
+          답변을 적는 곳입니다. 답변을 적는 곳입니다. 답변을 적는 곳입니다.
+          답변을 적는 곳입니다. 답변을 적는 곳입니다. 답변을 적는 곳입니다.
+          답변을 적는 곳입니다. 답변을 적는 곳입니다.
+        </div>
+      </div>
+    </div>
+    <div class="accordion">
+      <div class="faq-item">
+        <div class="faq-question">
+          질문의 제목을 적는 곳입니다?
+          <span class="arrow"><img src="./images/icon-down.svg" alt="" /></span>
+        </div>
+        <div class="faq-answer">
+          답변을 적는 곳입니다. 답변을 적는 곳입니다. 답변을 적는 곳입니다.
+          답변을 적는 곳입니다. 답변을 적는 곳입니다. 답변을 적는 곳입니다.
+          답변을 적는 곳입니다. 답변을 적는 곳입니다.
+        </div>
+      </div>
+    </div>
+    <div class="accordion">
+      <div class="faq-item">
+        <div class="faq-question">
+          질문의 제목을 적는 곳입니다?
+          <span class="arrow"><img src="./images/icon-down.svg" alt="" /></span>
+        </div>
+        <div class="faq-answer">
+          답변을 적는 곳입니다. 답변을 적는 곳입니다. 답변을 적는 곳입니다.
+          답변을 적는 곳입니다. 답변을 적는 곳입니다. 답변을 적는 곳입니다.
+          답변을 적는 곳입니다. 답변을 적는 곳입니다.
+        </div>
+      </div>
+    </div>
+    <div class="accordion">
+      <div class="faq-item">
+        <div class="faq-question">
+          질문의 제목을 적는 곳입니다?
+          <span class="arrow"><img src="./images/icon-down.svg" alt="" /></span>
+        </div>
+        <div class="faq-answer">
+          답변을 적는 곳입니다. 답변을 적는 곳입니다. 답변을 적는 곳입니다.
+          답변을 적는 곳입니다. 답변을 적는 곳입니다. 답변을 적는 곳입니다.
+          답변을 적는 곳입니다. 답변을 적는 곳입니다.
+        </div>
+      </div>
+    </div>
+    <div class="accordion">
+      <div class="faq-item">
+        <div class="faq-question">
+          질문의 제목을 적는 곳입니다?
+          <span class="arrow"><img src="./images/icon-down.svg" alt="" /></span>
+        </div>
+        <div class="faq-answer">
+          답변을 적는 곳입니다. 답변을 적는 곳입니다. 답변을 적는 곳입니다.
+          답변을 적는 곳입니다. 답변을 적는 곳입니다. 답변을 적는 곳입니다.
+          답변을 적는 곳입니다. 답변을 적는 곳입니다.
+        </div>
+      </div>
+    </div>
+    <div class="accordion">
+      <div class="faq-item">
+        <div class="faq-question">
+          질문의 제목을 적는 곳입니다?
+          <span class="arrow"><img src="./images/icon-down.svg" alt="" /></span>
+        </div>
+        <div class="faq-answer">
+          답변을 적는 곳입니다. 답변을 적는 곳입니다. 답변을 적는 곳입니다.
+          답변을 적는 곳입니다. 답변을 적는 곳입니다. 답변을 적는 곳입니다.
+          답변을 적는 곳입니다. 답변을 적는 곳입니다.
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <%- include('partials/footer') %>
+  </body>
+</html>

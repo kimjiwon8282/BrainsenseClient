@@ -1,0 +1,163 @@
+/* 고객지원 페이지 대표사진 */
+.cs_introPage {
+  height: 619px;
+  width: 100vw;
+  background: linear-gradient(to bottom, #f8f8f8, #fefefe);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 오버레이추가 */
+.cs_img-overlay {
+  /* absolute 안 하고 다른 방법으로 사용해도 될듯 */
+
+  /* 필요 */
+  position: absolute;
+  /* 필요 */
+  top: 0;
+  /* 필요없음 */
+  left: 0;
+  /* 필요 */
+  width: 100%;
+  /* 필요 */
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* 반투명 검은색 (0.5 = 50% 어두움) */
+
+  /* 얘도 의미가 없는거 같기는 한데 일단 보류 */
+  /* z-index: 0; */
+}
+
+/* 이미지 오버레이 컨테이너 */
+.cs_introimg {
+  text-align: center;
+  box-shadow: 0px 0px 100px 50px rgba(254, 254, 254, 0.8);
+}
+
+/* 이미지 */
+.cs_introimg img {
+  width: 1440px;
+  height: 100%;
+  object-fit: cover;
+  display: inline-block;
+  box-shadow: 0px 0px 100px 100px rgba(색상, 0.7);
+  z-index: 1;
+}
+
+/* 메인 제목 */
+.cs_content {
+  position: absolute;
+  top: 197px;
+  width: 588px;
+  height: 144px;
+  text-align: center;
+  z-index: 10;
+  /* border: 1px solid red; */
+  color: white;
+  gap: 24px;
+}
+
+/* 제목 스타일 */
+.cs_content h1 {
+  /* 필요 */
+  font-size: 44px;
+  font-weight: 700;
+}
+
+/* 서브 텍스트 스타일 */
+.cs_content p {
+  font-size: 20px;
+  margin-top: 24px;
+  opacity: 0.8;
+}
+
+.cs_path {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  display: flex;
+  /* border: 3px solid aquamarine; */
+  position: absolute;
+  margin-top: 547px;
+  width: 720px;
+  height: 72px;
+  color: white;
+  word-wrap: break-word;
+}
+
+.first {
+  /* border: 1px solid white; */
+  width: 360px;
+  height: 72px;
+  letter-spacing: -0.28px;
+}
+
+.second {
+  position: absolute;
+  /* border: 1px solid white; */
+  margin: 0;
+  width: 62px;
+  padding: 22px 149px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background-color: #76767666;
+}
+
+#third {
+  padding: 22px 124.5px;
+  width: 111px;
+  background-color: #1261d4;
+}
+
+.cs_f_h1 {
+  margin: 80px auto;
+  width: 1200px;
+  height: 90.8px;
+  border-bottom: 0.5px solid #767676;
+  text-align: center;
+  color: #111111;
+  font-size: 36px;
+  font-family: Pretendard;
+  font-weight: 600;
+  line-height: 50.4px;
+  word-wrap: break-word;
+}
+
+.accordion {
+  margin: 0 auto 24px auto;
+  padding-bottom: 28px;
+  width: 1000px;
+  overflow: hidden;
+  border-bottom: 0.5px solid #c8c8c8;
+}
+
+.faq-question {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  word-wrap: break-word;
+}
+
+.faq-answer {
+  display: none;
+  padding-top: 20px;
+  padding-left: 24px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 22.4px;
+  padding-bottom: 4px;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .arrow {
+  transform: rotate(180deg);
+}
