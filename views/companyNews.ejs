@@ -6,7 +6,6 @@
   <!-- 배경이미지 -->
   <div class="company_introimg">
     <img src="/images/company_intro_bg.jpg" alt="인트로 이미지" />
-    <!-- ✅ 오버레이 추가 -->
     <div class="company_img-overlay"></div>
   </div>
   <div class="company_content">
@@ -25,69 +24,66 @@
     </div>
   </div>
 </div>
+
 <div class="company_f_h1">NEWS</div>
 
-<div class="news_card">
-  <div class="news_img">
-    <img src="/images/뉴스이미지.png" alt="뉴스 이미지" />
+<% if (posts && posts.length > 0) { %>
+  <% posts.forEach((post) => { %>
+    <% 
+      // content에서 첫번째 <img> 태그의 src 추출 (없으면 기본 이미지 사용)
+      let representativeImg = '/images/뉴스이미지.png';
+      const imgRegex = /<img\s+[^>]*src="([^"]+)"[^>]*>/i;
+      const match = post.content.match(imgRegex);
+      if(match && match[1]){
+        representativeImg = match[1];
+      }
+    %>
+    <div class="news_card">
+      <div class="news_img">
+        <a href="/company/news/<%= post._id %>" style="text-decoration: none;">
+          <img src="<%= representativeImg %>" alt="뉴스 이미지" />
+        </a>
+      </div>
+      <div class="news_text">
+        <a href="/company/news/<%= post._id %>" style="text-decoration: none; color: inherit;">
+          <div class="news_head"><%= post.title %></div>
+        </a>
+        <div class="news_date">
+          <% 
+            const createdAt = new Date(post.createdAt);
+            const y = createdAt.getFullYear();
+            const m = String(createdAt.getMonth() + 1).padStart(2, '0');
+            const d = String(createdAt.getDate()).padStart(2, '0');
+            const dateStr = `${y}.${m}.${d}`;
+          %>
+          <%= dateStr %>
+        </div>
+      </div>
+    </div>
+  <% }) %>
+<% } else { %>
+  <div class="news_card">
+    <div class="news_img">
+      <img src="/images/뉴스이미지.png" alt="뉴스 이미지" />
+    </div>
+    <div class="news_text">
+      <div class="news_head">등록된 뉴스가 없습니다.</div>
+      <div class="news_date">-</div>
+    </div>
   </div>
-  <div class="news_text">
-    <div class="news_head">보도 자료 및 글의 제목입니다</div>
-    <div class="news_date">2025.12.34</div>
+<% } %>
+
+<!-- 페이지 네비게이션 -->
+<% if (totalPages > 1) { %>
+  <div class="pagination" style="text-align:center; margin-top: 30px;">
+    <% for (let i = 1; i <= totalPages; i++) { %>
+      <% if (i === currentPage) { %>
+        <span class="page-number current" style="margin: 0 5px; font-weight: bold;"><%= i %></span>
+      <% } else { %>
+        <a href="/company/news?page=<%= i %>" class="page-number" style="margin: 0 5px; text-decoration: none;"><%= i %></a>
+      <% } %>
+    <% } %>
   </div>
-</div>
-<div class="news_card">
-  <div class="news_img">
-    <img src="/images/뉴스이미지.png" alt="뉴스 이미지" />
-  </div>
-  <div class="news_text">
-    <div class="news_head">보도 자료 및 글의 제목입니다</div>
-    <div class="news_date">2025.12.34</div>
-  </div>
-</div>
-<div class="news_card">
-  <div class="news_img">
-    <img src="/images/뉴스이미지.png" alt="뉴스 이미지" />
-  </div>
-  <div class="news_text">
-    <div class="news_head">보도 자료 및 글의 제목입니다</div>
-    <div class="news_date">2025.12.34</div>
-  </div>
-</div>
-<div class="news_card">
-  <div class="news_img">
-    <img src="/images/뉴스이미지.png" alt="뉴스 이미지" />
-  </div>
-  <div class="news_text">
-    <div class="news_head">보도 자료 및 글의 제목입니다</div>
-    <div class="news_date">2025.12.34</div>
-  </div>
-</div>
-<div class="news_card">
-  <div class="news_img">
-    <img src="/images/뉴스이미지.png" alt="뉴스 이미지" />
-  </div>
-  <div class="news_text">
-    <div class="news_head">보도 자료 및 글의 제목입니다</div>
-    <div class="news_date">2025.12.34</div>
-  </div>
-</div>
-<div class="news_card">
-  <div class="news_img">
-    <img src="/images/뉴스이미지.png" alt="뉴스 이미지" />
-  </div>
-  <div class="news_text">
-    <div class="news_head">보도 자료 및 글의 제목입니다</div>
-    <div class="news_date">2025.12.34</div>
-  </div>
-</div>
-<div class="news_card">
-  <div class="news_img">
-    <img src="/images/뉴스이미지.png" alt="뉴스 이미지" />
-  </div>
-  <div class="news_text">
-    <div class="news_head">보도 자료 및 글의 제목입니다</div>
-    <div class="news_date">2025.12.34</div>
-  </div>
-</div>
+<% } %>
+
 <%- include('partials/footer') %>
