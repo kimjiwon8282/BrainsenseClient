@@ -15,11 +15,12 @@
   <% if (post.attachments && post.attachments.length > 0) { %>
   <div class="news_attachments">
     <h3>첨부 파일</h3>
-    <% post.attachments.forEach(function(file) { // 파일 경로는
-    "/uploads/파일명" 형태로 저장 const fileName = file.split('/').pop(); const
-    ext = fileName.split('.').pop().toLowerCase(); const imageExtensions =
-    ['png', 'jpg', 'jpeg', 'gif', 'webp', 'svg']; %> <% if
-    (imageExtensions.indexOf(ext) !== -1) { %>
+    <% post.attachments.forEach(function(file) {
+    <!-- // 파일 경로는 "/uploads/파일명" 형태로 저장  -->
+    const fileName = file.split('/').pop(); const ext =
+    fileName.split('.').pop().toLowerCase(); const imageExtensions = ['png',
+    'jpg', 'jpeg', 'gif', 'webp', 'svg']; %> <% if (imageExtensions.indexOf(ext)
+    !== -1) { %>
     <div class="attachment_image">
       <img
         src="<%= file %>"
