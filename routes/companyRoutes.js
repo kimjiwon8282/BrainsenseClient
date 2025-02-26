@@ -6,7 +6,7 @@ router.get('/intro', (req, res) => {
 });
 
 router.get('/news', (req, res) => {
-  res.send('뉴스 페이지');
+  res.render('companyNews');
 });
 
 router.get('/team', (req, res) => {
