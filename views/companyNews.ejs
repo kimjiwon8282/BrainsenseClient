@@ -1,9 +1,8 @@
 <%- include('partials/header', { title: '인트로' }) %>
 <link rel="stylesheet" href="/css/news.css" />
 
-<!-- A페이지 -->
+<!-- A페이지: 회사 소개 및 네비게이션 영역 -->
 <div class="company_introPage">
-  <!-- 배경이미지 -->
   <div class="company_introimg">
     <img src="/images/company_intro_bg.jpg" alt="인트로 이미지" />
     <div class="company_img-overlay"></div>
@@ -30,7 +29,7 @@
 <% if (posts && posts.length > 0) { %>
   <% posts.forEach((post) => { %>
     <% 
-      // content에서 첫번째 <img> 태그의 src 추출 (없으면 기본 이미지 사용)
+      // post.content에서 첫 번째 <img> 태그의 src 추출 (없으면 기본 이미지 사용)
       let representativeImg = '/images/뉴스이미지.png';
       const imgRegex = /<img\s+[^>]*src="([^"]+)"[^>]*>/i;
       const match = post.content.match(imgRegex);
@@ -62,14 +61,9 @@
     </div>
   <% }) %>
 <% } else { %>
-  <div class="news_card">
-    <div class="news_img">
-      <img src="/images/뉴스이미지.png" alt="뉴스 이미지" />
-    </div>
-    <div class="news_text">
-      <div class="news_head">등록된 뉴스가 없습니다.</div>
-      <div class="news_date">-</div>
-    </div>
+  <!-- 뉴스가 없을 때: 중앙에 텍스트 메시지만 표시 -->
+  <div class="no-news" style="text-align: center; margin-top: 50px;">
+    <p style="font-size: 20px; color: #767676;">현재 등록된 뉴스가 없습니다.</p>
   </div>
 <% } %>
 
