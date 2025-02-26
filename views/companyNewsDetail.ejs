@@ -1,42 +1,38 @@
 <%- include('partials/header', { title: post.title }) %>
+<!-- NewsDetail.css 적용 예정 -->
 <link rel="stylesheet" href="/css/news.css" />
 
 <div class="news_detail">
   <h1 class="news_detail_title"><%= post.title %></h1>
   <div class="news_detail_date">
-    <% 
-      const createdAt = new Date(post.createdAt);
-      const y = createdAt.getFullYear();
-      const m = String(createdAt.getMonth() + 1).padStart(2, '0');
-      const d = String(createdAt.getDate()).padStart(2, '0');
-      const dateStr = `${y}.${m}.${d}`;
-    %>
-    <%= dateStr %>
+    <% const createdAt = new Date(post.createdAt); const y =
+    createdAt.getFullYear(); const m = String(createdAt.getMonth() +
+    1).padStart(2, '0'); const d = String(createdAt.getDate()).padStart(2, '0');
+    const dateStr = `${y}.${m}.${d}`; %> <%= dateStr %>
   </div>
-  <div class="news_detail_content">
-    <%- post.content %>
-  </div>
+  <div class="news_detail_content"><%- post.content %></div>
 
   <% if (post.attachments && post.attachments.length > 0) { %>
-    <div class="news_attachments">
-      <h3>첨부 파일</h3>
-      <% post.attachments.forEach(function(file) { 
-          // 파일 경로는 "/uploads/파일명" 형태로 저장
-          const fileName = file.split('/').pop();
-          const ext = fileName.split('.').pop().toLowerCase();
-          const imageExtensions = ['png', 'jpg', 'jpeg', 'gif', 'webp', 'svg'];
-      %>
-        <% if (imageExtensions.indexOf(ext) !== -1) { %>
-          <div class="attachment_image">
-            <img src="<%= file %>" alt="첨부 이미지 - <%= fileName %>" style="max-width:100%; margin-bottom: 10px;" />
-          </div>
-        <% } else { %>
-          <div class="attachment_file" style="margin-bottom: 10px;">
-            <a href="<%= file %>" download>파일 다운로드 (<%= fileName %>)</a>
-          </div>
-        <% } %>
-      <% }); %>
+  <div class="news_attachments">
+    <h3>첨부 파일</h3>
+    <% post.attachments.forEach(function(file) { // 파일 경로는
+    "/uploads/파일명" 형태로 저장 const fileName = file.split('/').pop(); const
+    ext = fileName.split('.').pop().toLowerCase(); const imageExtensions =
+    ['png', 'jpg', 'jpeg', 'gif', 'webp', 'svg']; %> <% if
+    (imageExtensions.indexOf(ext) !== -1) { %>
+    <div class="attachment_image">
+      <img
+        src="<%= file %>"
+        alt="첨부 이미지 - <%= fileName %>"
+        style="max-width: 100%; margin-bottom: 10px"
+      />
     </div>
+    <% } else { %>
+    <div class="attachment_file" style="margin-bottom: 10px">
+      <a href="<%= file %>" download>파일 다운로드 (<%= fileName %>)</a>
+    </div>
+    <% } %> <% }); %>
+  </div>
   <% } %>
 </div>
 
