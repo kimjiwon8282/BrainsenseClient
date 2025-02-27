@@ -1,0 +1,207 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 사진과 배경 이미지를 어울리게 만들기 위한 컨테이너 */
+.cs_introPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 이미지+오버레이 컨테이너 */
+.cs_introimg {
+  margin-top: 81px;
+  height: 619px;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 배경이미지 */
+.cs_introimg img {
+  width: 100%;
+  height: 900px;
+  object-fit: cover; /* 비율 유지 + div를 꽉 채움 */
+  object-position: center;
+  z-index: 1;
+}
+/* 오버레이추가 */
+.cs_img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* 반투명 검은색 (0.5 = 50% 어두움) */
+}
+
+/* 메인 텍스트 */
+.cs_content {
+  position: absolute;
+  top: 278px;
+  width: auto;
+  height: 144px;
+  text-align: center;
+  /* border: 1px solid red; */
+  color: white;
+}
+/* 메인 텍스트의 제목 */
+.cs_content h1 {
+  margin: 24px;
+  font-size: 44px;
+  font-weight: 700;
+}
+/* 메인 텍스트의 문딘 */
+.cs_content p {
+  font-size: 20px;
+  margin: 24px;
+  opacity: 0.8;
+}
+
+/* LNB */
+.cs_path {
+  width: auto;
+  height: 72px;
+  display: flex;
+  justify-self: center;
+  position: absolute;
+  margin-top: 628px;
+  width: 720px;
+  height: 72px;
+  word-wrap: break-word;
+}
+.first {
+  width: 360px;
+  height: 72px;
+}
+.second {
+  display: flex;
+  width: 360px;
+  height: 72px;
+  color: #fff;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; /* 28px */
+  letter-spacing: -0.4px;
+  text-decoration: none;
+  background-color: #1261d4;
+  justify-content: center;
+  align-items: center;
+}
+#third {
+  width: 360px;
+  height: 72px;
+  background-color: #76767666;
+}
+
+/* 메인 내용 페이지 */
+.hw_mainPage {
+  margin-top: 80px;
+  width: 480px;
+  height: 358.42px;
+  /* border: 1px solid red; */
+  justify-self: center;
+  justify-items: center;
+}
+
+/* 하드웨어 제목 */
+.hw_mainPage h1 {
+  margin-top: 0;
+  width: 123px;
+  height: 50px;
+  color: #111;
+  text-align: center;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; /* 50.4px */
+  letter-spacing: -0.72px;
+}
+
+/* 제품 카드 */
+.hw_product_card {
+  width: 480px;
+  height: 228.42px;
+  margin: 0;
+  margin-top: 80px;
+  justify-items: center;
+  border-radius: 20px;
+  background: #fff;
+  border: 0.5px solid white;
+  position: relative;
+  overflow: hidden;
+}
+
+.circle {
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  background: #1261d4;
+  border-radius: 50%;
+  opacity: 0;
+  margin-top: -300px;
+  margin-left: 210px;
+  transition: transform 0.3s ease-in-out, opacity 0.7s ease-in-out;
+  z-index: 1;
+}
+
+.hw_product_card:hover .hw_product_card {
+  overflow: hidden;
+}
+
+.hw_product_card:hover .circle {
+  opacity: 1;
+}
+
+.hw_product_card:hover .hw_product_card_text_group,
+.hw_product_card:hover .hw_product_card_text_group h3,
+.hw_product_card:hover .hw_product_card_text_group p {
+  z-index: 10;
+  color: white;
+}
+
+.hw_product_card_contents {
+  margin-top: 42px;
+  width: 400px;
+  height: 144px;
+  display: flex;
+  /* border: 1px solid black; */
+}
+.hw_product_card_img img {
+  width: 144.424px;
+  height: 144.424px;
+  aspect-ratio: 144.42/144.42;
+}
+
+/* 카드 글 모음 */
+.hw_product_card_text_group {
+  width: 195.58px;
+  height: 90px;
+  margin: 16px 0 38.42px 60px;
+  /* border: 1px solid blue; */
+}
+.hw_product_card_text_group h3 {
+  color: #111;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; /* 33.6px */
+  letter-spacing: -0.48px;
+  margin: 0;
+  padding: 0;
+}
+.hw_product_card_text_group p {
+  color: #111;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 22.4px */
+  letter-spacing: -0.32px;
+  margin: 0;
+  padding: 0;
+  margin-top: 12px;
+}

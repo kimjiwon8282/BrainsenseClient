@@ -1,0 +1,230 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 사진과 배경 이미지를 어울리게 만들기 위한 컨테이너 */
+.cs_introPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 이미지+오버레이 컨테이너 */
+.cs_introimg {
+  margin-top: 81px;
+  height: 619px;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 배경이미지 */
+.cs_introimg img {
+  width: 100%;
+  height: 900px;
+  object-fit: cover; /* 비율 유지 + div를 꽉 채움 */
+  object-position: center;
+  z-index: 1;
+}
+/* 오버레이추가 */
+.cs_img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* 반투명 검은색 (0.5 = 50% 어두움) */
+}
+
+/* 메인 텍스트 */
+.cs_content {
+  position: absolute;
+  top: 278px;
+  width: auto;
+  height: 144px;
+  text-align: center;
+  /* border: 1px solid red; */
+  color: white;
+}
+/* 메인 텍스트의 제목 */
+.cs_content h1 {
+  margin: 24px;
+  font-size: 44px;
+  font-weight: 700;
+}
+/* 메인 텍스트의 문딘 */
+.cs_content p {
+  font-size: 20px;
+  margin: 24px;
+  opacity: 0.8;
+}
+
+/* LNB */
+.cs_path {
+  width: auto;
+  height: 72px;
+  display: flex;
+  justify-self: center;
+  position: absolute;
+  margin-top: 628px;
+  width: 720px;
+  height: 72px;
+  word-wrap: break-word;
+}
+.first {
+  width: 360px;
+  height: 72px;
+}
+.second {
+  display: flex;
+  width: 360px;
+  height: 72px;
+  color: #fff;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; /* 28px */
+  letter-spacing: -0.4px;
+  text-decoration: none;
+  background-color: #1261d4;
+  justify-content: center;
+  align-items: center;
+}
+#third {
+  width: 360px;
+  height: 72px;
+  background-color: #76767666;
+}
+
+/* 메인 내용 페이지 */
+.sw_mainPage {
+  margin-top: 80px;
+  width: 1008px;
+  height: 898px;
+  /* border: 1px solid red; */
+  justify-self: center;
+  justify-items: center;
+}
+
+/* 하드웨어 제목 */
+.sw_mainPage h1 {
+  margin-top: 0;
+  width: 153px;
+  height: 50px;
+  color: #111;
+  text-align: center;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; /* 50.4px */
+  letter-spacing: -0.72px;
+}
+
+.sw_producet_cards {
+  display: flex;
+  margin-top: 80px;
+  gap: 48px;
+}
+
+/* 제품 카드 */
+.sw_product_card {
+  width: 480px;
+  height: 360px;
+  margin: 0;
+  justify-items: center;
+  border-radius: 20px;
+  background: #fff;
+  border: 0.5px solid #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.circle {
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  background: #1261d4;
+  border-radius: 50%;
+  opacity: 0;
+  margin-top: -420px;
+  margin-left: 217.57px;
+  transition: transform 0.3s ease-in-out, opacity 0.7s ease-in-out;
+  z-index: 1;
+}
+
+.sw_product_card:hover .sw_product_card {
+  overflow: hidden;
+}
+
+.sw_product_card:hover .circle {
+  opacity: 1;
+}
+
+.sw_product_card:hover .sw_product_card_text_group,
+.sw_product_card:hover .sw_product_card_text_group h3,
+.sw_product_card:hover .sw_product_card_text_group p {
+  z-index: 10;
+  color: white;
+}
+
+/* safeNest와 CATCHME 묶음 */
+.sw_product_card_contents {
+  margin-top: 42px;
+  width: 400px;
+  height: 275.86px;
+  display: flex;
+  /* border: 1px solid black; */
+}
+.sw_product_card_img img {
+  width: 140px;
+  height: 275.856px;
+  aspect-ratio: 140/275.86;
+  /* border: 1px solid black; */
+}
+
+/* 카드 글 모음 */
+.sw_product_card_text_group {
+  width: 200px;
+  height: 90px;
+  margin: 16px 40px 169.86px 60px;
+  /* border: 1px solid blue; */
+}
+.sw_product_card_text_group h3 {
+  color: #111;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; /* 33.6px */
+  letter-spacing: -0.48px;
+  margin: 0;
+  padding: 0;
+}
+.sw_product_card_text_group p {
+  width: 200px;
+  height: 44px;
+  color: #111;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 22.4px */
+  letter-spacing: -0.32px;
+  margin: 0;
+  padding: 0;
+  margin-top: 12px;
+}
+
+/* SafeNest의 NEW 알림 */
+#sw_product_NEW {
+  width: 59px;
+  height: 30px;
+  color: #fff;
+  display: flex;
+  padding: 4px 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 20px;
+  background: #1261d4;
+}
