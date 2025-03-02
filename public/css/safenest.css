@@ -1,0 +1,245 @@
+.safenest_header {
+  margin: 160px auto 197px auto;
+  /* border: 1px solid black; */
+  width: 866px;
+  height: 540px;
+  display: flex;
+}
+.safenest_iphone16pro {
+  width: 400px;
+  height: 540px;
+  /* border: 1px solid black; */
+}
+
+.safenest_iphone16pro img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.safenest_slogan {
+  margin-left: 80px;
+  margin-top: 104px;
+  width: 400px;
+  height: 332px;
+  /* border: 1px solid black; */
+}
+
+.safenest_slogan_ko {
+  color: #111111;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 67.2px;
+  word-wrap: break-word;
+  letter-spacing: -1px;
+}
+
+.safenest_slogan_en {
+  color: #111111;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 89.6px;
+  word-wrap: break-word;
+}
+
+.safenest_slogan img {
+  margin-top: 60px;
+}
+
+.safenest_board {
+  width: 100vw;
+  background: linear-gradient(0deg, #1d082a 0%, #050d3c 100%);
+  height: 2080px;
+  padding-top: 1px;
+}
+
+.safenest_board_h1 {
+  display: block;
+  /* border: 1px solid white; */
+  width: 100%;
+  color: white;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 67.2px;
+  word-wrap: break-word;
+  text-align: center;
+  margin-top: 120px;
+  height: 201px;
+}
+
+.safenest_app {
+  position: relative; /*추가*/
+  width: 400px;
+  height: 1252px;
+  margin: 160px auto 0 auto;
+}
+
+.safenest_app img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/*추가*/
+
+/* 설명 박스 스타일 */
+
+.safenest_explain_right_first {
+  position: absolute;
+  display: flex;
+  padding: 1px;
+  width: 293px;
+  height: 56px;
+  top: 415px;
+  left: 400px;
+  /* border: 1px solid white; */
+}
+
+.safenest_explain_right_second {
+  position: absolute;
+  display: flex;
+  padding: 1px;
+  width: 293px;
+  height: 56px;
+  top: 741px;
+  left: 400px;
+  /* border: 1px solid white; */
+}
+
+.safenest_explain_left_first {
+  position: absolute;
+  display: flex;
+  padding: 1px;
+  width: 200px;
+  height: 56px;
+  top: 229px;
+  right: 400px;
+  /* border: 1px solid white; */
+}
+
+.safenest_explain_left_second {
+  position: absolute;
+  display: flex;
+  padding: 1px;
+  width: 293px;
+  height: 56px;
+  top: 559px;
+  right: 320px;
+}
+
+.safenest_explain_left_third {
+  position: absolute;
+  display: flex;
+  padding: 1px;
+  width: 293px;
+  height: 56px;
+  top: 966px;
+  right: 320px;
+}
+
+.dotted-line_left {
+  display: block;
+  width: 64px;
+  margin-left: 1px;
+  /* border: 1px solid white; */
+}
+
+.dotted-line_left img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.dotted-line_right {
+  display: block;
+  width: 64px;
+  /* border: 1px solid white; */
+}
+
+.dotted-line_right img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.safenest_explain_text_right {
+  text-align: center;
+  color: #ffe103;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  word-wrap: break-word;
+  white-space: nowrap;
+  width: 200px;
+  /* border: 1px solid white; */
+  margin-left: 30px;
+}
+
+.safenest_explain_text_left {
+  text-align: center;
+  color: #ffe103;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  word-wrap: break-word;
+  white-space: nowrap;
+  width: 145px;
+  /* border: 1px solid white; */
+}
+
+.safe_nest_white {
+  width: 1440px;
+  margin: 0 auto;
+}
+
+.safe_nest_h2 {
+  margin: 240px 0px 0px 160px;
+  color: #111111;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 67.2px;
+  word-wrap: break-word;
+}
+
+.safe_nest_ex {
+  margin-left: 160px;
+  color: #767676;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 33.6px;
+  word-wrap: break-word;
+}
+
+.safe_nest_phone_field {
+  position: relative;
+  width: 480px;
+  height: 1080px;
+  margin: 80px auto 0px auto;
+}
+
+.safe_nest_phone_field img {
+  position: absolute;
+  width: 320px;
+  height: auto;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.safenest_overlay {
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  width: 320px;
+  height: auto;
+  object-fit: cover;
+  z-index: 2;
+}
+
+.safe_nest_phone3 {
+  margin: 80px auto 0 auto;
+  width: 360px;
+  height: 710px;
+}
+
+.safe_nest_phone3 img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}

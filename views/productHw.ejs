@@ -1,5 +1,6 @@
 <%- include('partials/header', { title: 'HW' }) %>
 <link rel="stylesheet" href="/css/hw.css" />
+<link rel="stylesheet" href="/css/commonProduct.css" />
 
 <!-- 인트로 영역 -->
 <div class="cs_introPage">
@@ -13,10 +14,10 @@
   </div>
   <div class="cs_path">
     <div class="first">
-      <a href="/products/hw" target="_self" class="second">하드웨어</a>
+      <a href="#" class="second" id="btn-hw">하드웨어</a>
     </div>
     <div class="first">
-      <a href="/products/sw" id="third" class="second">소프트웨어</a>
+      <a href="#" id="btn-sw" class="second">소프트웨어</a>
     </div>
   </div>
 </div>
@@ -46,4 +47,5 @@
     <div class="circle"></div>
   </div>
 </div>
+<script src="/js/productPath.js"></script>
 <%- include('partials/footer') %>

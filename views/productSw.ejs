@@ -1,5 +1,6 @@
 <%- include('partials/header', { title: 'SW' }) %>
 <link rel="stylesheet" href="/css/sw.css" />
+<link rel="stylesheet" href="/css/commonProduct.css" />
 
 <!-- 인트로 영역 -->
 <div class="cs_introPage">
@@ -13,12 +14,10 @@
   </div>
   <div class="cs_path">
     <div class="first">
-      <a href="/products/hw" target="_self" id="third" class="second"
-        >하드웨어</a
-      >
+      <a href="#" class="second" id="btn-hw">하드웨어</a>
     </div>
     <div class="first">
-      <a href="/products/sw" class="second">소프트웨어</a>
+      <a href="#" id="btn-sw" class="second">소프트웨어</a>
     </div>
   </div>
 </div>
@@ -28,7 +27,11 @@
   <h1>소프트웨어</h1>
   <div class="sw_producet_cards">
     <!-- 제품 카드 -->
-    <div class="sw_product_card">
+    <div
+      class="sw_product_card"
+      data-product="SafeNest"
+      style="cursor: pointer"
+    >
       <div class="sw_product_card_contents">
         <div class="sw_product_card_img">
           <img src="/images/safenest.png" alt="SafeNest" />
@@ -42,7 +45,7 @@
       <div class="circle"></div>
     </div>
     <!-- 제품 카드 -->
-    <div class="sw_product_card">
+    <div class="sw_product_card" data-product="CATCHME" style="cursor: pointer">
       <div class="sw_product_card_contents">
         <div class="sw_product_card_img">
           <img src="/images/chatchme.png" alt="SafeNest" />
@@ -57,7 +60,11 @@
   </div>
 
   <!-- 제품 카드 -->
-  <div class="sw_product_card" style="margin-top: 48px">
+  <div
+    class="sw_product_card"
+    data-product="JEJE"
+    style="cursor: pointer; margin-top: 48px"
+  >
     <div class="sw_product_card_contents">
       <div class="sw_product_card_img">
         <img src="/images/jeje.png" alt="SafeNest" />
@@ -70,4 +77,6 @@
     <div class="circle"></div>
   </div>
 </div>
+<script src="/js/productPath.js"></script>
+<script src="/js/productCards.js"></script>
 <%- include('partials/footer') %>
