@@ -1,5 +1,6 @@
 <%- include('partials/header', { title: '인트로' }) %>
 <link rel="stylesheet" href="/css/news.css" />
+<link rel="stylesheet" href="/css/commonCp.css" />
 
 <!-- A페이지: 회사 소개 및 네비게이션 영역 -->
 <div class="company_introPage">
@@ -13,13 +14,13 @@
   </div>
   <div class="company_path">
     <div class="first">
-      <a href="/company/intro" id="company_company" class="second">회사소개</a>
+      <a href="#" id="btn-intro" class="second">회사소개</a>
     </div>
     <div class="first">
-      <a href="/company/news" id="company_news" class="second">NEWS</a>
+      <a href="#" id="btn-news" class="second">NEWS</a>
     </div>
     <div class="first">
-      <a href="/company/team" id="company_team" class="second">팀소개</a>
+      <a href="#" id="btn-team" class="second">팀소개</a>
     </div>
   </div>
 </div>
@@ -79,5 +80,5 @@
     <% } %>
   </div>
 <% } %>
-
+<script src="/js/companyPath.js"></script>
 <%- include('partials/footer') %>
