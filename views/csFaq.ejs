@@ -1,5 +1,6 @@
 <%- include('partials/header', { title: '자주묻는질문' }) %>
 <link rel="stylesheet" href="/css/csFaq.css" />
+<link rel="stylesheet" href="/css/commonCs.css" />
 <body>
   <!-- A페이지 -->
   <div class="cs_introPage">
@@ -15,10 +16,10 @@
     </div>
     <div class="cs_path">
       <div class="first">
-        <a href="/cs/ask" target="_self" class="second">1:1 문의</a>
+        <a href="#" id="btn-ask" class="second">1:1 문의</a>
       </div>
       <div class="first">
-        <a href="/cs/faq" id="third" class="second">자주 묻는 질문</a>
+        <a href="#" id="btn-faq" class="second">자주 묻는 질문</a>
       </div>
     </div>
   </div>
@@ -156,5 +157,6 @@
   </div>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="/js/csFaq.js"></script>
+  <script src="/js/csPath.js"></script>
   <%- include('partials/footer') %>
 </body>

@@ -73,45 +73,6 @@
   opacity: 0.8;
 }
 
-.cs_path {
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 28px;
-  display: flex;
-  /* border: 3px solid aquamarine; */
-  position: absolute;
-  margin-top: 547px;
-  width: 720px;
-  height: 72px;
-  color: white;
-  word-wrap: break-word;
-}
-
-.first {
-  /* border: 1px solid white; */
-  width: 360px;
-  height: 72px;
-  letter-spacing: -0.28px;
-}
-
-.second {
-  position: absolute;
-  /* border: 1px solid white; */
-  margin: 0;
-  width: 62px;
-  padding: 22px 149px;
-  text-align: center;
-  text-decoration: none;
-  color: white;
-  background-color: #76767666;
-}
-
-#third {
-  padding: 22px 124.5px;
-  width: 111px;
-  background-color: #1261d4;
-}
-
 .cs_f_h1 {
   margin: 80px auto;
   width: 1200px;
