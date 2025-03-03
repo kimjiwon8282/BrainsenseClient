@@ -6,7 +6,7 @@ const multer = require('multer');
 const path = require('path');
 
 // 절대 경로로 admin 서버의 uploads 폴더 지정 (Windows 경로)
-const adminUploadsPath = '~/Desktop/ADMIN_PAGE/public/uploads/';
+const adminUploadsPath = "C:/Users/iwill/brainsenseV2/public/uploads/";
 
 // Multer 설정: 파일을 adminUploadsPath에 저장
 const storage = multer.diskStorage({
