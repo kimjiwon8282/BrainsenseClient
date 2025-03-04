@@ -275,7 +275,7 @@ textarea::placeholder {
 /* 파일 드래그 앤 드롭 영역 (네모 박스) 스타일 */
 .cs_upload_area {
   border: 2px dashed #ccc;
-  padding-top: 14px;
+  padding-top: 8px;
   border-radius: 10px;
   text-align: center;
   transition: background-color 0.3s, border-color 0.3s;
@@ -284,7 +284,7 @@ textarea::placeholder {
   position: relative;
   width: 572px;
   box-sizing: border-box;
-  height: 54px;
+  height: 66px;
   margin-left: 48px;
 }
 .cs_upload_area.hover {
