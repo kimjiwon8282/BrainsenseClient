@@ -40,6 +40,10 @@ csUploadArea.addEventListener('drop', (event) => {
 // 파일들을 처리하여 selectedFiles 배열에 추가하고, UI 업데이트
 function handleFiles(files) {
   for (let i = 0; i < files.length; i++) {
+    if (files[i].size > 5 * 1024 * 1024) {
+      alert(`${files[i].name} 파일의 크기가 5MB를 초과합니다. 5MB 이하의 파일만 업로드 가능합니다.`);
+      continue;
+    }
     // 최대 5개 제한 확인
     if (selectedFiles.length >= 5) {
       alert('최대 5개까지 업로드 가능합니다.');
