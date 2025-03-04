@@ -90,6 +90,24 @@ function updateFileList() {
       csFileList.appendChild(li);
     });
   }
+  // [추가] 파일 목록이 새로 그려진 후, 체크박스/버튼을 동적으로 아래로 이동
+  adjustAgreeSubmitPosition();
+}
+
+// [추가] 파일 목록 높이에 따라 .cs_agree_submit의 margin-top을 동적으로 조정
+function adjustAgreeSubmitPosition() {
+  // 파일 목록(ul) 요소의 실제 높이를 가져옴
+  const fileListHeight = csFileList.offsetHeight;
+
+  // 기존 margin-top 값을 기반으로 동적 계산 (예: 100px + 파일 목록 높이)
+  const baseMargin = 100; // 원래 css에서 .cs_agree_submit { margin-top: 100px } 였다면 그 값을 기준으로
+  const newMargin = baseMargin + fileListHeight;
+
+  // .cs_agree_submit 요소를 찾아서 margin-top을 재설정
+  const csAgreeSubmit = document.querySelector('.cs_agree_submit');
+  if (csAgreeSubmit) {
+    csAgreeSubmit.style.marginTop = `${newMargin}px`;
+  }
 }
 
 // 폼 제출 시 AJAX로 모든 입력 데이터와 선택된 파일들을 백엔드에 전송
