@@ -1,23 +1,87 @@
 <%- include('partials/header', { title: post.title }) %>
-<!-- NewsDetail.css 적용 예정 -->
-<link rel="stylesheet" href="/css/news.css" />
+<link rel="stylesheet" href="/css/newsDetail.css" />
+<link rel="stylesheet" href="/css/commonCp.css" />
 
-<div class="news_detail">
-  <h1 class="news_detail_title"><%= post.title %></h1>
-  <div class="news_detail_date">
-    <% const createdAt = new Date(post.createdAt); const y =
-    createdAt.getFullYear(); const m = String(createdAt.getMonth() +
-    1).padStart(2, '0'); const d = String(createdAt.getDate()).padStart(2, '0');
-    const dateStr = `${y}.${m}.${d}`;
-    const source = post.source %> <%= dateStr %> | <%= source %>
+<div class="company_introPage">
+  <!-- 배경이미지 -->
+  <div class="company_introimg">
+    <img src="/images/company_intro_bg.jpg" alt="인트로 이미지" />
+    <!-- ✅ 오버레이 추가 -->
+    <div class="company_img-overlay"></div>
   </div>
-  <div class="news_detail_content"><%- post.content %></div>
+  <div class="company_content">
+    <p>기업</p>
+    <h1>감각을 통한 일상 속의 새로운 변화</h1>
+  </div>
+  <div class="company_path">
+    <div class="first">
+      <a href="#" id="btn-intro" class="second">회사소개</a>
+    </div>
+    <div class="first">
+      <a href="#" id="btn-news" class="second">NEWS</a>
+    </div>
+    <div class="first">
+      <a href="#" id="btn-team" class="second">팀소개</a>
+    </div>
+  </div>
+</div>
 
+<div class="id_container">
+  <!-- 제목 -->
+  <div class="id_header"><%= post.title %></div>
+  
+  <!-- 날짜 및 출처 -->
+  <div class="id_header2">
+    <% 
+      const createdAt = new Date(post.createdAt);
+      const y = createdAt.getFullYear();
+      const m = String(createdAt.getMonth() + 1).padStart(2, '0');
+      const d = String(createdAt.getDate()).padStart(2, '0');
+      const dateStr = `${y}.${m}.${d}`;
+      const source = post.source;
+    %>
+    <%= dateStr %> | <%= source %>
+  </div>
+  
+  <!-- 구분선 -->
+  <div class="id_hz"></div>
+  
+  <!-- 뉴스 텍스트 내용 및 이미지 추출 -->
+  <% 
+    // 모든 <img> 태그의 src를 전역 정규표현식으로 추출하여 배열에 저장
+    let imageArray = [];
+    const imgRegexGlobal = /<img\s+[^>]*src="([^"]+)"[^>]*>/gi;
+    let matchArr;
+    while ((matchArr = imgRegexGlobal.exec(post.content)) !== null) {
+      imageArray.push(matchArr[1]);
+    }
+    // 이미지 태그들을 모두 제거한 텍스트 콘텐츠
+    const imgRegexForReplace = /<img\s+[^>]*src="([^"]+)"[^>]*>/gi;
+    let cleanedContent = post.content.replace(imgRegexForReplace, '');
+  %>
+  
+  <!-- 뉴스 텍스트 내용 -->
+  <div class="id_content"><%- cleanedContent %></div>
+  
+  <!-- 뉴스 이미지 슬라이더 (이미지가 있을 때만 렌더링) -->
+  <% if (imageArray.length > 0) { %>
+    <div class="id_img" style="position: relative; background-color: transparent;">
+      <% if (imageArray.length > 1) { %>
+        <button class="slider-prev" onclick="prevSlide()" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); z-index: 2;">&#10094;</button>
+      <% } %>
+      <img id="slider-image" src="<%= imageArray[0] %>" alt="뉴스 이미지" style="width: 100%; height: 100%; object-fit: contain; object-position: center; background-color: transparent; margin-bottom: 10px;" />
+      <% if (imageArray.length > 1) { %>
+        <button class="slider-next" onclick="nextSlide()" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); z-index: 2;">&#10095;</button>
+      <% } %>
+    </div>
+  <% } %>
+  
+  <!-- 첨부파일 영역 (기존 코드 그대로 유지) -->
   <% if (post.attachments && post.attachments.length > 0) { %>
     <div class="news_attachments">
       <h3>첨부 파일</h3>
       <% post.attachments.forEach(function(file) { 
-          <!-- // 파일 경로는 "/uploads/파일명" 형태로 저장 -->
+          // 파일 경로는 "/uploads/파일명" 형태로 저장됨
           const fileName = file.split('/').pop();
           const ext = fileName.split('.').pop().toLowerCase();
           const imageExtensions = ['png', 'jpg', 'jpeg', 'gif', 'webp', 'svg'];
@@ -34,6 +98,17 @@
       <% }); %>
     </div>
   <% } %>
+  
+  <!-- 목록 보기 버튼 -->
+  <div class="id_list">목록 보기</div>
 </div>
 
+<!-- 전역 변수 images에 imageArray 전달 -->
+<script>
+  var images = <%- JSON.stringify(imageArray) %>;
+  var currentSlide = 0;
+</script>
+<!-- 슬라이더 스크립트를 외부 파일로 로드 -->
+<script src="/js/newsDetail.js"></script>
+<script src="/js/companyPath.js"></script>
 <%- include('partials/footer') %>
