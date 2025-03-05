@@ -17,19 +17,19 @@
     <div class="news_attachments">
       <h3>첨부 파일</h3>
       <% post.attachments.forEach(function(file) { 
-          // 파일 경로는 "/uploads/파일명" 형태로 저장
+          <!-- // 파일 경로는 "/uploads/파일명" 형태로 저장 -->
           const fileName = file.split('/').pop();
           const ext = fileName.split('.').pop().toLowerCase();
           const imageExtensions = ['png', 'jpg', 'jpeg', 'gif', 'webp', 'svg'];
       %>
         <% if (imageExtensions.indexOf(ext) !== -1) { %>
-          <div class="attachment_image">
-            <img src="<%= file %>" alt="첨부 이미지 - <%= fileName %>" style="max-width:100%; margin-bottom: 10px;" />
-          </div>
+        <div class="attachment_image">
+          <img src="<%= '/uploads/' + fileName %>" alt="첨부 이미지 - <%= fileName %>" style="max-width:100%; margin-bottom: 10px;" />
+        </div>
         <% } else { %>
-          <div class="attachment_file" style="margin-bottom: 10px;">
-            <a href="<%= file %>" download>파일 다운로드 (<%= fileName %>)</a>
-          </div>
+        <div class="attachment_file" style="margin-bottom: 10px;">
+          <a href="<%= '/uploads/' + fileName %>" download>파일 다운로드 (<%= fileName %>)</a>
+        </div>
         <% } %>
       <% }); %>
     </div>
