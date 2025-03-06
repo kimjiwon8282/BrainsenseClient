@@ -76,28 +76,25 @@
     </div>
   <% } %>
   
-  <!-- 첨부파일 영역 (기존 코드 그대로 유지) -->
-  <% if (post.attachments && post.attachments.length > 0) { %>
-    <div class="news_attachments">
-      <h3>첨부 파일</h3>
+<!-- 첨부파일 영역 (디자인 수정 적용) -->
+<% if (post.attachments && post.attachments.length > 0) { %>
+  <div class="id_link_container">
+    <div class="id_link_head">
+      <div class="id_text" style="margin-top: 20px;">첨부파일</div>
+    </div>
+    <div class="id_link">
       <% post.attachments.forEach(function(file) { 
           // 파일 경로는 "/uploads/파일명" 형태로 저장됨
           const fileName = file.split('/').pop();
-          const ext = fileName.split('.').pop().toLowerCase();
-          const imageExtensions = ['png', 'jpg', 'jpeg', 'gif', 'webp', 'svg'];
       %>
-        <% if (imageExtensions.indexOf(ext) !== -1) { %>
-        <div class="attachment_image">
-          <img src="<%= '/uploads/' + fileName %>" alt="첨부 이미지 - <%= fileName %>" style="max-width:100%; margin-bottom: 10px;" />
-        </div>
-        <% } else { %>
-        <div class="attachment_file" style="margin-bottom: 10px;">
+        <div class="id_link_text">
           <a href="<%= '/uploads/' + fileName %>" download>파일 다운로드 (<%= fileName %>)</a>
         </div>
-        <% } %>
       <% }); %>
     </div>
-  <% } %>
+  </div>
+<% } %>
+
   
   <!-- 목록 보기 버튼 -->
   <div class="id_list">목록 보기</div>

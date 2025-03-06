@@ -1,7 +1,7 @@
 .id_container{
     margin: 117px auto 170px auto;
     width: 1124px;
-    height: 1504px;
+    min-height: 500px;
 }
 
 .id_header{
@@ -52,22 +52,34 @@
 .id_link_container{
     display: flex;
     width: 100%;
-    height: 182px;
     border-top: 1px solid #767676;
     border-bottom: 1px solid #767676;
     margin-bottom: 120px;
+    min-height: 90px; /* 수정정 사항 */
+    padding-bottom: 20px;
+    box-sizing: border-box; /* 컨테이너에 padding 포함 */
 }
 
-.id_link_head{
+.id_link_head {
+    position: relative;
     width: 163px;
-    height: 100%;
-    border-right: 0.5px solid #D9D9D9;
+    /* 기존 border-right 제거 */
     color: black;
     font-size: 24px;
     font-weight: 600;
     line-height: 33.60px;
     word-wrap: break-word;
     text-align: center;
+}
+
+.id_link_head::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;          /* 컨테이너 상단에 딱 붙게 */
+    bottom: -20px;       /* 컨테이너 하단에 딱 붙게 */
+    width: 0.5px;
+    background-color: #D9D9D9;
 }
 
 .id_link{
