@@ -118,12 +118,10 @@
 .id_viewer{
     width: 60px;
     height: 32px;
-    line-height: 32px;
     margin-left: 16px;
     color: #767676;
     font-size: 20px;
     font-weight: 400;
-    line-height: 28px;
     word-wrap: break-word;
     background-color: #E4E4E4;
     text-align: center;
