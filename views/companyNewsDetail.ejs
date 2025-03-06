@@ -101,8 +101,10 @@
 </div>
 
 <!-- 전역 변수 images에 imageArray 전달 -->
+<div id="dataHolder" data-images='<%- JSON.stringify(imageArray) %>'></div>
 <script>
-  var images = <%- JSON.stringify(imageArray) %>;
+  var dataHolder = document.getElementById('dataHolder');
+  var images = JSON.parse(dataHolder.getAttribute('data-images'));
   var currentSlide = 0;
 </script>
 <!-- 슬라이더 스크립트를 외부 파일로 로드 -->
