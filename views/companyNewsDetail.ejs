@@ -80,7 +80,7 @@
 <% if (post.attachments && post.attachments.length > 0) { %>
   <div class="id_link_container">
     <div class="id_link_head">
-      <div class="id_text" style="margin-top: 20px;">첨부파일</div>
+      <div class="id_text" style="margin-top: 30px;">첨부파일</div>
     </div>
     <div class="id_link">
       <% post.attachments.forEach(function(file) { 
@@ -92,7 +92,7 @@
            const previewableExtensions = ['pdf', 'png', 'jpg', 'jpeg', 'gif', 'webp', 'svg'];
       %>
       <div class="id_link_text">
-        <a href="<%= '/uploads/' + fileName %>" target="_blank" class="viewer-link">
+        <a href="<%= '/uploads/' + fileName %>" download="<%= fileName %>" target="_blank" class="viewer-link">
             파일 다운로드 (<%= fileName %>)
         </a>
         <button class="id_viewer" data-file-url="<%= '/uploads/' + fileName %>">뷰어</button>
