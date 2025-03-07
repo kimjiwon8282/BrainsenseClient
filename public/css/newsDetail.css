@@ -56,7 +56,7 @@
     border-bottom: 1px solid #767676;
     margin-bottom: 120px;
     min-height: 90px; /* 수정정 사항 */
-    padding-bottom: 20px;
+    padding-bottom: 30px;
     box-sizing: border-box; /* 컨테이너에 padding 포함 */
 }
 
@@ -77,7 +77,7 @@
     position: absolute;
     right: 0;
     top: 0;          /* 컨테이너 상단에 딱 붙게 */
-    bottom: -20px;       /* 컨테이너 하단에 딱 붙게 */
+    bottom: -30px;       /* 컨테이너 하단에 딱 붙게 */
     width: 0.5px;
     background-color: #D9D9D9;
 }
@@ -89,6 +89,8 @@
     font-weight: 400;
     line-height: 33.60px;
     word-wrap: break-word;
+    flex-direction: column;
+    box-sizing: borader-box;
 }
 
 .id_link_text{
@@ -116,7 +118,7 @@
 }
 
 .id_viewer{
-    width: 60px;
+    width: auto;
     height: 32px;
     margin-left: 16px;
     color: #767676;
@@ -124,5 +126,13 @@
     font-weight: 400;
     word-wrap: break-word;
     background-color: #E4E4E4;
+    align-items: center;
     text-align: center;
+    justify-content: center;
+    border: 1px solid #C8C8C8; /* 테두리 제거 */
+    outline: none; /* 포커스 시 나타나는 외곽선 제거 */
+    padding: 2px 12px;
+    box-sizing: border-box;
+    white-space: nowrap;
+    line-height: 1;
 }

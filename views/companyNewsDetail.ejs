@@ -85,21 +85,19 @@
     <div class="id_link">
       <% post.attachments.forEach(function(file) { 
           // 파일 경로는 "/uploads/파일명" 형태로 저장됨
-          const fileName = file.split('/').pop();
-          <!-- 파일 가져오기 -->
-           const fileUrl = "/uploads/" + fileName;
+          const fileName = file.originalName;
+          const fileUrl = file.safeName.startsWith('/uploads/') ? file.safeName : '/uploads/' + file.safeName;
            const fileExt = fileName.split(".").pop().toLowerCase();
            const previewableExtensions = ['pdf', 'png', 'jpg', 'jpeg', 'gif', 'webp', 'svg'];
       %>
       <div class="id_link_text">
-        <a href="<%= '/uploads/' + fileName %>" download="<%= fileName %>" target="_blank" class="viewer-link">
-            파일 다운로드 (<%= fileName %>)
+        <a href="<%= fileUrl %>" download="<%= fileName %>" target="_blank" class="viewer-link">
+          <%= fileName %>
         </a>
-        <button class="id_viewer" data-file-url="<%= '/uploads/' + fileName %>">뷰어</button>
-    </div>
-    
+        <button class="id_viewer" data-file-url="<%= fileUrl %>">미리보기</button>
+      </div>
       <% }); %>
-    </div>
+    </div> 
   </div>
 <% } %>
 
