@@ -7,10 +7,10 @@ const productRoutes = require('./routes/productRoutes');
 const companyRoutes = require('./routes/companyRoutes');
 const csRoutes = require('./routes/csRoutes');
 const postRoutes = require('./routes/postRoutes');
+const techRoutes = require('./routes/techRoutes');
 
 const app = express();
 const port = 8080;
-const Post = require('./models/post');
 
 dbConnect(); // MongoDB 연결
 
@@ -31,6 +31,7 @@ app.use(orderRoutes); // routes/orderRoutes.js의 API 라우트 불러오기
 app.use('/products', productRoutes);
 app.use('/company', companyRoutes);
 app.use('/cs', csRoutes);
+app.use('/tech', techRoutes);
 app.use(postRoutes);
 
 app.get('/', (req, res) => {
@@ -40,9 +41,7 @@ app.get('/', (req, res) => {
 app.get('/home', (req, res) => {
   res.render('home');
 });
-app.get('/tech', (req, res) => {
-  res.send('tech페이지');
-});
+
 // app.get('/cs', (req, res) => {
 //   res.render('csFaq');
 // });

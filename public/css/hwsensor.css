@@ -43,18 +43,9 @@
   opacity: 0.8;
 }
 
-/* 섹션 콘텐츠 */
-.section-wrapper {
-  position: relative;
-}
-.section-blur {
-  filter: blur(8px);
-  pointer-events: none;
-}
-
 /* 스크롤 따라오는 오버레이 */
 .section-overlay {
-  position: absolute; /* ← 이게 핵심! 스크롤 따라다님 */
+  position: fixed; /* ← 이게 핵심! 스크롤 따라다님 */
   top: 0;
   left: 0;
   width: 100%;
@@ -94,40 +85,4 @@
   color: #333;
   text-align: center;
   line-height: 1.4;
-}
-
-/* 섹션 콘텐츠 스타일 */
-.section {
-  background: #fff;
-  border-radius: 12px;
-  padding: 30px;
-  margin: 40px auto;
-  max-width: 800px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-.section h2 {
-  font-size: 25px;
-  margin-bottom: 16px;
-  color: #111;
-}
-.section p {
-  line-height: 1.7;
-  font-size: 15px;
-  margin-bottom: 20px;
-}
-.img-wrap {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-.img-wrap img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-.img-small {
-  width: 300px;
-}
-.img-medium {
-  width: 400px;
 }

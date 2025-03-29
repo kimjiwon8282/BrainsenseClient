@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
       } else if (productName === 'JEJE') {
         window.location.href = '/products/sw/jeje';
       }
+      if (productName === 'Sensor') {
+        window.location.href = '/products/hw/sensor';
+      }
     });
   });
 });
