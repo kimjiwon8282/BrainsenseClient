@@ -1,0 +1,46 @@
+body {
+  font-family: 'Pretendard', sans-serif;
+  margin: 0;
+  padding: 40px;
+  background-color: #f9f9f9;
+  color: #333;
+}
+.section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.section h2 {
+  font-size: 20px;
+  margin-bottom: 16px;
+  color: #111;
+}
+
+.section p {
+  line-height: 1.7;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.img-wrap {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.img-wrap img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.img-small {
+  width: 300px;
+}
+
+.img-medium {
+  width: 400px;
+}
