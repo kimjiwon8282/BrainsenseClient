@@ -1,104 +1,82 @@
-.f_body{
-  width: 100vw;
-  height: 320px;
+.f_body {
+  width: 100%;
   background-color: #112138;
-  margin-top: 460px;
   color: white;
+  margin-top: 80px;
 }
 
-.f_container{
+.f_container {
+  width: 100%;
+  padding: 60px;
+  background-color: #112138;
+  box-sizing: border-box;
+}
+.f_inner {
+  max-width: 1440px;
+  min-width: 1200px; /* ✅ 최소 1200px 유지 */
+  width: 100%;
   margin: 0 auto;
-  width: 1440px;
-  height: 320px;
-  /* border: 1px solid aqua; */
+  padding: 0 30px;
+  box-sizing: border-box;
   display: flex;
+  justify-content: space-between;
+  gap: 40px;
 }
 
-.f_left{
-  width: 463px;
-  margin-top: 40px;
-  margin-left: 100px;
-  /* border: 1px solid red; */
+.f_left {
+  width: 50%;
 }
 
-
-.f_logo{
-  width: 183px ;
-  height: 45px;
-  text-align: left;
-  /* border: 1px solid white; */
-  margin-bottom: 47px;
+.f_logo {
+  margin-bottom: 24px;
 }
 
-.f_img { 
+.f_img {
   width: 120px;
-  height: 16.678px;
-  aspect-ratio: 120.00/16.68;
+  height: auto;
   padding-bottom: 8px;
-  /* border: 1px solid white; */
 }
 
-.f_copy{
+.f_copy {
   margin: 0;
   color: #767676;
   font-size: 10px;
   letter-spacing: -0.2px;
-  /* border: 1px solid white; */
-  
 }
 
-.f_leftbottom{
-  color: #FFF;
-  font-family: Pretendard;
+.f_leftbottom {
   font-size: 14px;
-  font-style: normal;
   font-weight: 300;
-  line-height: 140%; /* 19.6px */
+  line-height: 1.6;
   letter-spacing: -0.28px;
-  /* border: 1px solid white; */
 }
 
-.f_right{
-  margin-left: 275px;
-  margin-top: 75.5px;
-  width: 484px;
-  height: 169px;
-  /* border: 1px solid aqua; */
-  display: inline-flex;
-  align-items: flex-start;
-  gap: 28px;
-
+.f_right {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
-.f_content{
-  /* border: 1px solid red; */
-  width: 100px;
+.f_content {
+  min-width: 100px;
 }
 
 .f_h5 {
-  display: block;
-  margin: 0;
-  /* border: 1px solid yellow; */
-  color: #FFF;
-  font-family: Pretendard;
+  color: #fff;
   font-size: 18px;
-  font-style: normal;
   font-weight: 600;
-  line-height: 140%; /* 25.2px */
-  letter-spacing: -0.36px;
+  margin-bottom: 8px;
   text-decoration: none;
+  display: block;
 }
 
 .f_pcontent {
-  display: block;
-  margin: 0;
-  /* border: 1px solid white; */
-  color: #FFF;
+  color: #fff;
   font-size: 14px;
-  font-style: normal;
   font-weight: 300;
-  line-height: 140%; /* 19.6px */
-  letter-spacing: -0.28px;
-  margin-top: 16px;
+  margin-top: 8px;
   text-decoration: none;
+  display: block;
 }
