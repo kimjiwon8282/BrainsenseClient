@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const productCards = document.querySelectorAll('.sw_product_card');
+  const productSW = document.querySelectorAll('.sw_product_card');
+  const productHW = document.querySelectorAll('.hw_product_card');
 
-  productCards.forEach((card) => {
+  productSW.forEach((card) => {
     card.addEventListener('click', () => {
       const productName = card.getAttribute('data-product');
 
@@ -12,6 +13,12 @@ document.addEventListener('DOMContentLoaded', () => {
       } else if (productName === 'JEJE') {
         window.location.href = '/products/sw/jeje';
       }
+    });
+  });
+
+  productHW.forEach((card) => {
+    card.addEventListener('click', () => {
+      const productName = card.getAttribute('data-product');
       if (productName === 'Sensor') {
         window.location.href = '/products/hw/sensor';
       }
