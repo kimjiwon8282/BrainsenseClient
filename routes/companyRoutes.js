@@ -6,6 +6,9 @@ router.get('/intro', (req, res) => {
   res.render('companyIntro');
 });
 
+router.get('/perform', (req, res) => {
+  res.render('companyPerform');
+});
 router.get('/news', async (req, res) => {
   try {
     const page = parseInt(req.query.page) || 1; // 기본값 1페이지

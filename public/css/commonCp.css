@@ -68,8 +68,6 @@ body {
   display: flex;
   margin: 628px auto 0 auto;
   position: absolute;
-  width: 1080px;
-  height: 72px;
   word-wrap: break-word;
 }
 /* 공통 버튼 스타일 */

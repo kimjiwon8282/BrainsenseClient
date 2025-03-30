@@ -1,15 +1,17 @@
 .company_h1 {
-  margin: 80px auto 160px auto;
+  margin: 120px auto 80px auto;
   width: 1200px;
   height: 90.8px;
   border-bottom: 0.5px solid #767676;
   text-align: center;
+  align-items: center;
   color: #111111;
   font-size: 36px;
   font-weight: 600;
   line-height: 50.4px;
   word-wrap: break-word;
 }
+
 .company_h2 {
   text-align: center;
   letter-spacing: -0.89px;
@@ -80,18 +82,14 @@
 }
 
 .company_history {
-  /* border: 1px solid black; */
-  text-align: center;
-  width: 1440px;
-  color: black;
-  margin: 80px auto;
-  height: 800px;
-  /* height: 1402px; */
+  width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+  display: flex;
+  justify-content: center;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   gap: 80px;
-  display: block;
 }
 
 .company_h4 {
@@ -103,17 +101,16 @@
 }
 
 .company_board {
-  margin-top: 80px;
-  margin-bottom: 80px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  margin: 0 auto; /* 💥 핵심: 가운데 정렬 */
   display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 .company_style {
   margin: 0 auto;
-  width: 386px;
+  width: 100%;
   align-self: stretch;
   justify-content: flex-start;
   align-items: flex-start;
@@ -177,7 +174,7 @@
   flex: 1;
   text-align: left;
   font-size: 20px;
-  width: 700px;
+  width: 100%;
 }
 
 .patent_number {
