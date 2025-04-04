@@ -1,3 +1,4 @@
+require('dotenv').config(); // 환경 변수 로드
 const express = require('express');
 const Order = require('../models/order');
 const router = express.Router();
@@ -6,7 +7,7 @@ const multer = require('multer');
 const path = require('path');
 
 // 절대 경로로 admin 서버의 uploads 폴더 지정 (Windows 경로)
-const adminUploadsPath = "C:/Users/iwill/brainsenseV2/public/uploads/";
+const adminUploadsPath = process.env.adminUploadsPath;
 
 // Multer 설정: 파일을 adminUploadsPath에 저장
 const storage = multer.diskStorage({
