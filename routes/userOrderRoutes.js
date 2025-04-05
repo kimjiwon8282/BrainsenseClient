@@ -5,35 +5,34 @@ const router = express.Router();
 const smtpTransport = require('../config/mailer');
 const multer = require('multer');
 const path = require('path');
+const multerGoogleStorage = require('multer-google-storage');
 
-// 절대 경로로 admin 서버의 uploads 폴더 지정 (Windows 경로)
-const adminUploadsPath = process.env.adminUploadsPath;
+const GCLOUD_BUCKET = 'bucket-quickstart_brainsense-455803';
 
-// Multer 설정: 파일을 adminUploadsPath에 저장
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, adminUploadsPath);
-  },
-  filename: function (req, file, cb) {
-    const ext = path.extname(file.originalname).toLowerCase();
-    const newFilename = `${Date.now()}${ext}`;
-    cb(null, newFilename);
-  },
-});
-
-// 업로드 미들웨어: 최대 5개, 파일 크기 제한 5MB
+// multerGoogleStorage 설정
 const upload = multer({
-  storage: storage,
+  storage: multerGoogleStorage.storageEngine({
+    bucket: GCLOUD_BUCKET,
+    projectId: 'brainsense-455803',
+    keyFilename: path.join(__dirname, '..', 'brainsense-455803-dcda0e4146ff.json'),
+    filename: (req, file, cb) => {
+      const ext = path.extname(file.originalname).toLowerCase();
+      // orders/ 접두사를 추가하여 GCS 내 orders 폴더에 저장
+      const newFilename = `orders/${Date.now()}${ext}`;
+      cb(null, newFilename);
+    },
+  }),
   limits: { fileSize: 5 * 1024 * 1024 },
 });
 
 router.post('/api/order', upload.array('attachments', 5), async (req, res) => {
   try {
-    // 파일 업로드 처리
+    // 업로드된 파일 객체들을 가져옵니다.
     const files = req.files || [];
-    const fileUrls = files.map((file) => `/uploads/${file.filename}`);
+    // GCS 업로드 시 file 객체의 'path' 속성이 공개 URL로 설정되어 있습니다.
+    const fileUrls = files.map(file => file.path);
 
-    // Order 생성 시, 개별 필드를 명시적으로 지정
+    // Order 생성 시 각 필드를 명시적으로 지정합니다.
     const newOrder = new Order({
       customerName: req.body.customerName,
       companyName: req.body.companyName,
@@ -81,5 +80,6 @@ router.post('/api/order', upload.array('attachments', 5), async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+
 
 module.exports = router;

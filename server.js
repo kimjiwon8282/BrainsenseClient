@@ -1,7 +1,6 @@
 require('dotenv').config(); // 환경 변수 로드
 const express = require('express');
 const path = require('path');
-const helmet = require('helmet'); // Helmet require
 const dbConnect = require('./config/dbConnect'); // 데이터베이스 연결 함수 불러오기
 const orderRoutes = require('./routes/userOrderRoutes'); // 주문 관련 라우트 추가
 const productRoutes = require('./routes/productRoutes');
@@ -15,8 +14,6 @@ const port = 8080;
 
 dbConnect(); // MongoDB 연결
 
-// 보안 강화: Helmet 미들웨어 적용
-app.use(helmet());
 // EJS 설정
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
