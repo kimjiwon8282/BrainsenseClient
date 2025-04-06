@@ -175,19 +175,7 @@
 <div class="company_head">오시는길</div>
 <div class="company_map_box">
   <div class="company_map">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3250.
-1333064527053!2d128.80688957633552!3d35.45149404255903!2m3!1f0!2f0!3f0!3
-m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3568af91e56519bb%3A0xc6c02277f2954441
-!2z67aA7IKw64yA7ZWZ6rWQIOqzteuPmeyLpO2XmOyLpOyKteq0gA!5e0!3m2!1sko!2skr!
-4v1740482481088!5m2!1sko!2skr"
-      width="480px"
-      height="330px"
-      style="border: 0"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-    ></iframe>
+    <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=<%= KAKAO_JS_KEY %>"></script>
   </div>
   <div class="company_info">
     <div class="company_info_head">주소</div>
@@ -202,4 +190,5 @@ m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3568af91e56519bb%3A0xc6c02277f2954441
   </div>
 </div>
 <script src="/js/companyPath.js"></script>
+<script src="/js/map.js"></script>
 <%- include('partials/footer') %>
