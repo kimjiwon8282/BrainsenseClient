@@ -39,9 +39,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/home', (req, res) => {
-  res.render('home', {
-    KAKAO_JS_KEY: process.env.KAKAO_JS_KEY
-  });
+  res.render('home');
 });
 
 

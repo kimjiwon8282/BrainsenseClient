@@ -3,7 +3,9 @@ const router = express.Router();
 const Post = require('../models/post');
 
 router.get('/intro', (req, res) => {
-  res.render('companyIntro');
+  res.render('companyIntro', {
+    KAKAO_JS_KEY: process.env.KAKAO_JS_KEY
+  });
 });
 
 router.get('/perform', (req, res) => {
