@@ -8,13 +8,13 @@ const path = require('path');
 const multerGoogleStorage = require('multer-google-storage');
 
 const GCLOUD_BUCKET = 'bucket-quickstart_brainsense-455803';
-
+const keyFilePath = process.env.GOOGLE_APPLICATION_CREDENTIALS;
 // multerGoogleStorage 설정
 const upload = multer({
   storage: multerGoogleStorage.storageEngine({
     bucket: GCLOUD_BUCKET,
     projectId: 'brainsense-455803',
-    keyFilename: process.env.GOOGLE_APPLICATION_CREDENTIALS,
+    keyFilename: keyFilePath,
     filename: (req, file, cb) => {
       const ext = path.extname(file.originalname).toLowerCase();
       // orders/ 접두사를 추가하여 GCS 내 orders 폴더에 저장
