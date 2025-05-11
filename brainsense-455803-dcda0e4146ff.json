@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "brainsense-455803",
+  "private_key_id": "dcda0e4146ff71f51ea972b5d5db5eb4adcc0993",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDgtnBAMIbbs0Sn\nYrq15ZGJQRIxnClfCph092IDzT0PW++3H/2UUYCJ4SAbeTOr7pzdO4CyqiiIRwd7\nQpav/0czIFovrZl4m0oez7UsWI3hPJWA5C2eUMcZHDxCHhg+hkJ7+4IrdZxK1v6/\nQw53Svc31QTZW9WQtOtUe9bVC5xy6KZwaD7XgFYWV8fQITVxv+0n+blibTtFSdmW\nuI2XGs/o2de62AIVFMNkEnoU0kFn16hhmj96CLf6/cZFN07l5odqcVzZi5TDJLcU\n7N5EmTCzKzmfAq/K5vOLCibLTQYeJJYOeHLlqc6t2zkGA2e04NZbEW7An7Xw/G/A\n4UtwZssvAgMBAAECggEAE89Rhv8gLGcZ4s272wRBd8GiSnhTV1sWRJ14aRBjVSLM\nN68cykIDHGSZ0YI2UW5oKsKvnlCM4TKt0Kp2oU5WZwXvnWtm77B08NFrzdyCqXwP\nS/0RnnbNjoOkNknz5jMs0kRCXfVw0VIxxAez00VrFON1GXpUkfy5EEoYjtCGusRo\neb8POaFLU/gI6IDnHOv+vUcqZU5YNRaTK6qfMLhcMPaaFGsTPwSpmysVgaiARC+V\noSpbMnbjJaAwcvzCdFGLgHf8As4SNjQrzhKGqViXccSll5dtjAcWkgxhdy1rN9YC\nVvJhi4lwQ9rVdA5nMCjXl20/lP98VFVHBlSgXKja0QKBgQDxWDzXm01SjK6rAig6\nI7qtgr9IdFN2Y72TH/ROwSadRkuExzOEHendSOYVWOTgEFwhXzbkxI3W7no2wXuX\nw9Nknbtwat6aNch+cm0eakOArx5JywPjY+WrPtqR8TeOqWAuwFgilkempVF8dI/9\nGRNtMwxdBdlQ2rSrgP9q8CoqPwKBgQDuW6bftIWQm8oVn+vAAPurqSG7D8miWDJ4\nTUHqGag12vMJ0UX+e2RipXpkqCotOZ/TRxGnMhNSdZRqy8s/oETnYSva5Ry6M7+y\nRs6tUJvLhCsYicwwxB25l34ZDDQRMy24XzhUepYS+SLQOXU46ZCVm/xW/0C4Q7zL\njk3UTZTDEQKBgCuoKYFa73bCSgpXHo29ztP6Nb3WhQ6CZlWJzzi7yc9jWt/O5Ou+\nOYK04CH2bZh2fSPwRE7Hm1zI0MS85S2D1+Z4feKNAm1k0zrEWibJVCKgCtuQZMiq\nVm5OtVz3BHTDAMoUMx02kAl+GCpqL226LoBvXoopN7FfjpUDhbCDdy0jAoGAX6cw\nJH4RS6L5SgxPU1IRrSXGf4cqZ5f1SQnX9dYuBs7C0aHF8QYblurJXzONGXESjnrq\nvqn9zw2YbfMysWnjvObl7oYbLS4vM5/uuOasXtO/Z62E390UALKmy+51xqE/K8oq\nlNxM9Xg9XEpynFA+0YszjMYKdufYD+gfm582n8ECgYAwHGO2OYcSWnLAzH3iJ1p7\nXF9xNgUI7Z5dhUDVskgnaptMqv80b2/Upk0fpW4xYYRd9Nz8dyMryDywMbnV2cyH\njGPYAm171ukU1Mhs2zJu5CU+szUYLMtowy1WIjzwvFiF3HqrblM1pxeIumaXzQaY\nuBuWmRosOQvdb8wQSeyMyw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "brainsense@brainsense-455803.iam.gserviceaccount.com",
+  "client_id": "104850650287696395219",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/brainsense%40brainsense-455803.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

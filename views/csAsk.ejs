@@ -1,0 +1,250 @@
+<%- include('partials/header', { title: '고객지원' }) %>
+<link rel="stylesheet" href="/css/csAsk.css" />
+<link rel="stylesheet" href="/css/commonCs.css" />
+<main>
+  <!-- 인트로 영역 -->
+  <div class="cs_introPage">
+    <div class="cs_introimg">
+      <img src="/images/cs_intro_bg.jpg" alt="인트로 이미지" />
+      <div class="cs_img-overlay"></div>
+    </div>
+    <div class="cs_content">
+      <p>고객지원</p>
+      <h1>무엇이든지 편하게 물어봐주세요</h1>
+    </div>
+    <div class="cs_path">
+      <div class="first">
+        <a href="#" id="btn-ask" class="second">1:1 문의</a>
+      </div>
+      <div class="first">
+        <a href="#" id="btn-faq" class="second">자주 묻는 질문</a>
+      </div>
+    </div>
+  </div>
+  <div class="cs_form_title">
+    <h2>1:1문의</h2>
+    <p>
+      대표 번호(010-9109-6401)로 연락 주시거나 아래 양식에 맞추어 문의 글을
+      남겨주시면 빠르고 친절하게 안내드리겠습니다.
+    </p>
+  </div>
+
+  <div class="cs_form_contents">
+    <!-- form 태그: 파일 업로드를 위해 enctype 설정, AJAX로 제출 -->
+    <form id="cs_form" enctype="multipart/form-data">
+      <!-- 폼 카테고리: 종류 (라디오 버튼) -->
+      <div class="cs_form_category" id="cs_form_radio">
+        <div class="cs_form_category_title cs_essential_list">
+          <label for="orderType">종류</label>
+        </div>
+        <div
+          class="cs_form_content"
+          style="background-color: #f5f5f5; border: 0"
+        >
+          <div class="cs_form_category_option">
+            <input
+              type="radio"
+              name="orderType"
+              id="service"
+              value="제품 및 서비스"
+              style="width: 28px; height: 28px; margin-right: 8px"
+              required
+            />
+            <label for="service">제품 및 서비스</label>
+          </div>
+          <div class="cs_form_category_option">
+            <input
+              type="radio"
+              name="orderType"
+              id="outsourcing"
+              value="외주"
+              style="width: 28px; height: 28px; margin: 0 8px"
+            />
+            <label for="outsourcing">외주</label>
+          </div>
+          <div class="cs_form_category_option">
+            <input
+              type="radio"
+              name="orderType"
+              id="cooperation"
+              value="협력 및 제안"
+              style="width: 28px; height: 28px; margin: 0 8px"
+            />
+            <label for="cooperation">협력 및 제안</label>
+          </div>
+          <div class="cs_form_category_option">
+            <input
+              type="radio"
+              name="orderType"
+              id="etc"
+              value="기타"
+              style="width: 28px; height: 28px; margin: 0 8px"
+            />
+            <label for="etc">기타</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- 폼 카테고리: 성함 -->
+      <div class="cs_form_category">
+        <div class="cs_form_category_title cs_essential_list">
+          <label for="customerName">성함</label>
+        </div>
+        <div class="cs_form_content">
+          <input
+            type="text"
+            name="customerName"
+            id="customerName"
+            class="cs_form_text"
+            placeholder="예: 홍길동"
+            required
+          />
+        </div>
+      </div>
+
+      <!-- 폼 카테고리: 소속 -->
+      <div class="cs_form_category">
+        <div class="cs_form_category_title">
+          <label for="companyName">소속</label>
+        </div>
+        <div class="cs_form_content">
+          <input
+            type="text"
+            name="companyName"
+            id="companyName"
+            class="cs_form_text"
+            placeholder="예: 브레인센스 연구소 / 부서명"
+            required
+          />
+        </div>
+      </div>
+
+      <!-- 폼 카테고리: 연락처 -->
+      <div class="cs_form_category">
+        <div class="cs_form_category_title">
+          <label for="companyPhone">연락처</label>
+        </div>
+        <div class="cs_form_content">
+          <input
+            type="text"
+            name="companyPhone"
+            id="companyPhone"
+            class="cs_form_text"
+            placeholder="예: 01012345678"
+            required
+          />
+        </div>
+      </div>
+
+      <!-- 폼 카테고리: 이메일 -->
+      <div class="cs_form_category">
+        <div class="cs_form_category_title cs_essential_list">
+          <label for="companyEmail">이메일</label>
+        </div>
+        <div class="cs_form_content">
+          <input
+            type="email"
+            name="companyEmail"
+            id="companyEmail"
+            class="cs_form_text"
+            placeholder="예: example@domain.com"
+            required
+          />
+        </div>
+      </div>
+
+      <!-- 폼 카테고리: 내용 -->
+      <div class="cs_form_category" id="cs_form_contentinput">
+        <div class="cs_form_category_title cs_essential_list">
+          <label for="details">내용</label>
+        </div>
+        <div class="cs_form_content">
+          <textarea
+            name="details"
+            id="details"
+            class="cs_form_text"
+            placeholder="문의 내용을 구체적으로 입력해주세요."
+            style="width: 720px; height: 280px; resize: none"
+            required
+          ></textarea>
+        </div>
+      </div>
+
+      <!-- 폼 카테고리: 첨부파일, 개인정보동의, 제출 버튼 -->
+      <div class="cs_form_file_submit">
+        <!-- 폼 카테고리: 첨부파일 -->
+        <div class="cs_form_category" id="cs_form_file">
+          <div class="cs_form_category_title">
+            <label for="attachments">첨부파일</label>
+          </div>
+          <div class="cs_upload_container">
+            <div class="cs_container">
+              <!-- 드래그앤드롭 영역 -->
+              <div class="cs_upload_area" id="cs_upload_area">
+                <p>
+                  여기에 파일을 끌어다 놓으세요.(파일당 5MB)<br />
+                  <span style="color: #999"
+                    >최대 5개까지 업로드 가능합니다.</span
+                  >
+                </p>
+              </div>
+              <div class="cs_btn_container">
+                <!-- 파일 선택 버튼 -->
+                <button type="button" class="cs_upload_btn" id="cs_upload_btn">
+                  파일 선택
+                </button>
+                <!-- 실제 file input (hidden); 백엔드와 맞춰 name="attachments" -->
+                <input
+                  type="file"
+                  name="attachments"
+                  id="attachments"
+                  multiple
+                  style="display: none"
+                />
+              </div>
+            </div>
+            <!-- 선택된 파일 목록을 보여줄 영역 -->
+            <ul class="cs_file_list" id="cs_file_list"></ul>
+          </div>
+        </div>
+
+        <!-- 폼 카테고리: 개인정보 동의 및 제출 -->
+        <div class="cs_agree_submit">
+          <div class="cs_form_agree">
+            <input
+              type="checkbox"
+              name="privacyConsent"
+              id="privacyConsent"
+              style="width: 28px; height: 28px; margin: 0"
+              required
+            />
+            <label
+              for="privacyConsent"
+              class="cs_formagree_text"
+            >
+              개인정보 이용에 동의합니다
+            </label>
+          </div>
+          <input
+            type="submit"
+            style="
+              width: 720px;
+              height: 60px;
+              font-size: 20px;
+              border: 0;
+              background-color: #1261d4;
+              margin-top: 36px;
+              margin-left: 138px;
+              color: white;
+            "
+            value="문의하기"
+          />
+        </div>
+      </div>
+    </form>
+  </div>
+</main>
+
+<script src="/js/csAsk.js"></script>
+<script src="/js/csPath.js"></script>
+<%- include('partials/footer') %>

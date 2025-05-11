@@ -1,0 +1,48 @@
+
+.company_f_h1 {
+  margin: 80px auto;
+  width: 1200px;
+  height: 90.8px;
+  border-bottom: 0.5px solid #767676;
+  text-align: center;
+  color: #111111;
+  font-size: 36px;
+  font-family: Pretendard;
+  font-weight: 600;
+  line-height: 50.4px;
+  word-wrap: break-word;
+}
+
+.news_card {
+  display: flex;
+  margin: 0 auto 24px auto;
+  width: 1000px;
+  height: 184px;
+  border-bottom: 0.5px solid #c8c8c8;
+}
+
+.news_img img {
+  width: 240px;
+  height: 160px;
+}
+
+.news_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* border: 1px solid black; */
+  height: 160px;
+  margin-left: 40px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 33.6px;
+  word-wrap: break-word;
+}
+
+.news_date {
+  color: #767676;
+  /* border: 1px solid black; */
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22.4px;
+}

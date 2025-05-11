@@ -1,0 +1,82 @@
+<%- include('partials/header', { title: 'SW' }) %>
+<link rel="stylesheet" href="/css/sw.css" />
+<link rel="stylesheet" href="/css/commonProduct.css" />
+
+<!-- 인트로 영역 -->
+<div class="cs_introPage">
+  <div class="cs_introimg">
+    <img src="/images/hw_intro_bg.jpg" alt="인트로 이미지" />
+    <div class="cs_img-overlay"></div>
+  </div>
+  <div class="cs_content">
+    <p>제품</p>
+    <h1>소비자 맞춤형 제품을 디자인합니다</h1>
+  </div>
+  <div class="cs_path">
+    <div class="first">
+      <a href="#" class="second" id="btn-hw">하드웨어</a>
+    </div>
+    <div class="first">
+      <a href="#" id="btn-sw" class="second">소프트웨어</a>
+    </div>
+  </div>
+</div>
+
+<!-- 메인 페이지 -->
+<div class="sw_mainPage">
+  <h1>소프트웨어</h1>
+  <div class="sw_producet_cards">
+    <!-- 제품 카드 -->
+    <div
+      class="sw_product_card"
+      data-product="SafeNest"
+      style="cursor: pointer"
+    >
+      <div class="sw_product_card_contents">
+        <div class="sw_product_card_img">
+          <img src="/images/safenest.png" alt="SafeNest" />
+        </div>
+        <div class="sw_product_card_text_group">
+          <h3>SafeNest</h3>
+          <p>영유아 돌연사 방지 및<br />모니터링 매트</p>
+          <p id="sw_product_NEW">NEW</p>
+        </div>
+      </div>
+      <div class="circle"></div>
+    </div>
+    <!-- 제품 카드 -->
+    <div class="sw_product_card" data-product="CATCHME" style="cursor: pointer">
+      <div class="sw_product_card_contents">
+        <div class="sw_product_card_img">
+          <img src="/images/chatchme.png" alt="SafeNest" />
+        </div>
+        <div class="sw_product_card_text_group">
+          <h3>CATCHME</h3>
+          <p>치매 초기 증상 파악을 위한<br />걸음 분석 깔창</p>
+        </div>
+      </div>
+      <div class="circle"></div>
+    </div>
+  </div>
+
+  <!-- 제품 카드 -->
+  <div
+    class="sw_product_card"
+    data-product="JEJE"
+    style="cursor: pointer; margin-top: 48px"
+  >
+    <div class="sw_product_card_contents">
+      <div class="sw_product_card_img">
+        <img src="/images/jeje.png" alt="SafeNest" />
+      </div>
+      <div class="sw_product_card_text_group">
+        <h3>JEJE</h3>
+        <p>바른 자세 습관 개선을 위한<br />자세 분석 방석</p>
+      </div>
+    </div>
+    <div class="circle"></div>
+  </div>
+</div>
+<script src="/js/productPath.js"></script>
+<script src="/js/productCards.js"></script>
+<%- include('partials/footer') %>

@@ -1,0 +1,271 @@
+.company_h1 {
+  margin: 120px auto 80px auto;
+  width: 1200px;
+  height: 90.8px;
+  border-bottom: 0.5px solid #767676;
+  text-align: center;
+  align-items: center;
+  color: #111111;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 50.4px;
+  word-wrap: break-word;
+}
+
+.company_h2 {
+  text-align: center;
+  letter-spacing: -0.89px;
+  margin: 0 auto;
+  color: black;
+  font-size: 44px;
+  font-weight: 600;
+  line-height: 61.6px;
+  width: 687px;
+  height: 124px;
+}
+
+.news_card {
+  display: flex;
+  margin: 0 auto 24px auto;
+  width: 1000px;
+  height: 184px;
+  border-bottom: 0.5px solid #c8c8c8;
+}
+
+.news_img img {
+  width: 240px;
+  height: 160px;
+}
+
+.news_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* border: 1px solid black; */
+  height: 160px;
+  margin-left: 40px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 33.6px;
+  word-wrap: break-word;
+}
+
+.news_date {
+  color: #767676;
+  /* border: 1px solid black; */
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22.4px;
+}
+
+.company_img {
+  width: 480px;
+  height: 360px;
+  margin: 60px auto;
+}
+
+.company_img img {
+  width: 480px;
+  height: 360px;
+}
+
+.company_h3 {
+  color: #767676;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 33.6px;
+  /* word-wrap: break-word; */
+  width: 1440px;
+  height: 170px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.company_history {
+  width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 80px;
+}
+.company_history1 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.company_h4 {
+  align-self: stretch;
+  font-size: 44px;
+  font-weight: 600;
+  line-height: 61.6px;
+  /* border: 1px solid black; */
+}
+
+.company_board {
+  width: 100%;
+  margin: 0 auto; /* 💥 핵심: 가운데 정렬 */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.company_board1 {
+  padding: 60px 240px;
+  width: 1200px;
+  margin: 0 auto; /* 💥 핵심: 가운데 정렬 */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.company_style {
+  margin: 0 auto;
+  width: 100%;
+  align-self: stretch;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 40px;
+  display: inline-flex;
+}
+.company_style1 {
+  margin: 0 60px;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  gap: 40px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.company_year {
+  color: #1261d4;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 44.8px;
+  word-wrap: break-word;
+}
+
+.company_history_line {
+  align-self: stretch;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2px;
+  display: inline-flex;
+}
+
+.company_dot {
+  width: 8px;
+  height: 8px;
+  background: #1261d4;
+  border-radius: 9999px;
+}
+
+.company_month {
+  color: #c8c8c8;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  word-wrap: break-word;
+  width: 40px;
+}
+
+.company_result {
+  flex: 1;
+  font-weight: 500;
+  color: #111;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 20px;
+  text-align: left;
+}
+.patent_item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+}
+
+.patent_info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  text-align: left;
+  font-size: 20px;
+  width: 100%;
+}
+
+.patent_number {
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #333;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.patent_title {
+  font-size: 20px;
+  color: #444;
+  line-height: 22px;
+  word-break: keep-all;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+}
+
+.company_head {
+  width: 1440px;
+  margin: 240px auto 80px auto;
+  color: black;
+  font-size: 44px;
+  font-weight: 600;
+  line-height: 61.6px;
+  word-wrap: break-word;
+  text-align: center;
+}
+
+.company_map_box {
+  background-color: white;
+  display: flex;
+  margin: 0 auto;
+  width: 1120px;
+  height: 420px;
+  /* border: 1px solid black; */
+}
+
+.company_map {
+  /* border: 1px solid black; */
+  width: 480px;
+  height: 330px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.15);
+  margin: 40px 54px 40px 40px;
+}
+
+.company_info {
+  /* border: 1px solid black; */
+  width: 400px;
+  height: 288px;
+  margin-top: 61.14px;
+}
+
+.company_info_head {
+  color: #767676;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  word-wrap: break-word;
+}
+
+.company_info_text {
+  color: #111111;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  word-wrap: break-word;
+}

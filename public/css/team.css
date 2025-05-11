@@ -1,0 +1,52 @@
+
+.company_f_h1 {
+  margin: 80px auto;
+  width: 1200px;
+  height: 90.8px;
+  border-bottom: 0.5px solid #767676;
+  text-align: center;
+  color: #111111;
+  font-size: 36px;
+  font-family: Pretendard;
+  font-weight: 600;
+  line-height: 50.4px;
+  word-wrap: break-word;
+}
+.team_card {
+  background-color: white;
+  margin: 120px auto 80px auto;
+  display: flex;
+  width: 276px;
+  height: 366px;
+  flex-direction: column;
+}
+
+.team_profile {
+  margin: 36px 48px 12px 48px;
+  width: 180px;
+  height: 216px;
+}
+
+.team_info {
+  text-align: center;
+  width: 90px;
+  height: 66px;
+  margin: 0 auto;
+}
+
+.team_name {
+  width: 89px;
+  text-align: center;
+  color: black;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 33.6px;
+  word-wrap: break-word;
+}
+.team_part {
+  color: #1261d4;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  word-wrap: break-word;
+}

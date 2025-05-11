@@ -1,0 +1,89 @@
+<%- include('partials/header', { title: '인트로' }) %>
+<link rel="stylesheet" href="/css/news.css" />
+<link rel="stylesheet" href="/css/commonCp.css" />
+
+<div class="company_introPage">
+  <!-- 배경이미지 -->
+  <div class="company_introimg">
+    <img src="/images/company_intro_bg.jpg" alt="인트로 이미지" />
+    <!-- ✅ 오버레이 추가 -->
+    <div class="company_img-overlay"></div>
+  </div>
+  <div class="company_content">
+    <p>기업</p>
+    <h1>감각을 통한 일상 속의 새로운 변화</h1>
+  </div>
+  <div class="company_path">
+    <div class="first">
+      <a href="#" id="btn-intro" class="second">회사소개</a>
+    </div>
+    <div class="first">
+      <a href="#" id="btn-perform" class="second">성과 및 실적</a>
+    </div>
+    <div class="first">
+      <a href="#" id="btn-news" class="second">NEWS</a>
+    </div>
+    <div class="first">
+      <a href="#" id="btn-team" class="second">팀소개</a>
+    </div>
+  </div>
+</div>
+
+<div class="company_f_h1">NEWS</div>
+
+<% if (posts && posts.length > 0) { %>
+  <% posts.forEach((post) => { %>
+    <% 
+      <!-- // post.content에서 첫 번째 <img> 태그의 src 추출 (없으면 기본 이미지 사용) -->
+      let representativeImg = '/images/뉴스이미지.png';
+      const imgRegex = /<img\s+[^>]*src="([^"]+)"[^>]*>/i;
+      const match = post.content.match(imgRegex);
+      if(match && match[1]){
+        representativeImg = match[1];
+      }
+    %>
+    <div class="news_card">
+      <div class="news_img">
+        <a href="/company/news/<%= post._id %>" style="text-decoration: none;">
+          <img src="<%= representativeImg %>" alt="뉴스 이미지" />
+        </a>
+      </div>
+      <div class="news_text">
+        <a href="/company/news/<%= post._id %>" style="text-decoration: none; color: inherit;">
+          <div class="news_head"><%= post.title %></div>
+        </a>
+        <div class="news_date">
+          <% 
+            const createdAt = new Date(post.createdAt);
+            const y = createdAt.getFullYear();
+            const m = String(createdAt.getMonth() + 1).padStart(2, '0');
+            const d = String(createdAt.getDate()).padStart(2, '0');
+            const dateStr = `${y}.${m}.${d}`;
+            const source = post.source;
+          %>
+          <%= dateStr %> | <%= source %>
+        </div>
+      </div>
+    </div>
+  <% }) %>
+<% } else { %>
+  <!-- 뉴스가 없을 때: 중앙에 텍스트 메시지만 표시 -->
+  <div class="no-news" style="text-align: center; margin-top: 50px;">
+    <p style="font-size: 20px; color: #767676;">현재 등록된 뉴스가 없습니다.</p>
+  </div>
+<% } %>
+
+<!-- 페이지 네비게이션 -->
+<% if (totalPages > 1) { %>
+  <div class="pagination" style="text-align:center; margin-top: 30px;">
+    <% for (let i = 1; i <= totalPages; i++) { %>
+      <% if (i === currentPage) { %>
+        <span class="page-number current" style="margin: 0 5px; font-weight: bold;"><%= i %></span>
+      <% } else { %>
+        <a href="/company/news?page=<%= i %>" class="page-number" style="margin: 0 5px; text-decoration: none;"><%= i %></a>
+      <% } %>
+    <% } %>
+  </div>
+<% } %>
+<script src="/js/companyPath.js"></script>
+<%- include('partials/footer') %>

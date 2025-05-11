@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 사진과 배경 이미지를 어울리게 만들기 위한 컨테이너 */
+.cs_introPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 이미지+오버레이 컨테이너 */
+.cs_introimg {
+  margin-top: 81px;
+  height: 619px;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 배경이미지 */
+.cs_introimg img {
+  width: 100%;
+  height: 900px;
+  object-fit: cover; /* 비율 유지 + div를 꽉 채움 */
+  object-position: center;
+  z-index: 1;
+}
+/* 오버레이추가 */
+.cs_img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* 반투명 검은색 (0.5 = 50% 어두움) */
+}
+
+/* 메인 텍스트 */
+.cs_content {
+  position: absolute;
+  top: 278px;
+  width: auto;
+  height: 144px;
+  text-align: center;
+  /* border: 1px solid red; */
+  color: white;
+}
+/* 메인 텍스트의 제목 */
+.cs_content h1 {
+  margin: 24px;
+  font-size: 44px;
+  font-weight: 700;
+}
+/* 메인 텍스트의 문딘 */
+.cs_content p {
+  font-size: 20px;
+  margin: 24px;
+  opacity: 0.8;
+}
+
+/* LNB */
+.cs_path {
+  width: auto;
+  height: 72px;
+  display: flex;
+  justify-self: center;
+  position: absolute;
+  margin-top: 628px;
+  width: 720px;
+  height: 72px;
+  word-wrap: break-word;
+}
+/* 공통 버튼 스타일 */
+.second {
+  display: flex;
+  width: 360px;
+  height: 72px;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 140%;
+  text-decoration: none;
+  background-color: #76767666; /* 기본 회색 */
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Active 클래스 스타일 */
+.second.active {
+  background-color: #1261d4; /* 파란색 활성화 */
+  color: #ffffff;
+}
