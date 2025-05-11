@@ -14,7 +14,7 @@ const upload = multer({
   storage: multerGoogleStorage.storageEngine({
     bucket: GCLOUD_BUCKET,
     projectId: 'brainsense-455803',
-    keyFilename: path.join(__dirname, '..', 'brainsense-455803-dcda0e4146ff.json'),
+    keyFilename: process.env.GOOGLE_APPLICATION_CREDENTIALS,
     filename: (req, file, cb) => {
       const ext = path.extname(file.originalname).toLowerCase();
       // orders/ 접두사를 추가하여 GCS 내 orders 폴더에 저장
@@ -30,7 +30,7 @@ router.post('/api/order', upload.array('attachments', 5), async (req, res) => {
     // 업로드된 파일 객체들을 가져옵니다.
     const files = req.files || [];
     // GCS 업로드 시 file 객체의 'path' 속성이 공개 URL로 설정되어 있습니다.
-    const fileUrls = files.map(file => file.path);
+    const fileUrls = files.map((file) => file.path);
 
     // Order 생성 시 각 필드를 명시적으로 지정합니다.
     const newOrder = new Order({
@@ -80,6 +80,5 @@ router.post('/api/order', upload.array('attachments', 5), async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
-
 
 module.exports = router;
