@@ -13,6 +13,7 @@ const app = express();
 const port = 8080;
 
 dbConnect(); // MongoDB 연결
+app.locals.KAKAO_JS_KEY = process.env.KAKAO_JS_KEY;
 
 // EJS 설정
 app.set('view engine', 'ejs');
@@ -41,7 +42,6 @@ app.get('/', (req, res) => {
 app.get('/home', (req, res) => {
   res.render('home');
 });
-
 
 app.listen(port, () => {
   console.log(`main server listening on port ${port}`);
