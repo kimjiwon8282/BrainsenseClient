@@ -3,6 +3,11 @@
 
 ---
 
+## 🌐 배포 URL  
+[브레인센스 홈페이지 접속하기](https://port-0-brainsense-ma6ncuq4334fb805.sel4.cloudtype.app/home)  
+
+---
+
 ## 🏢 프로젝트명  
 브레인센스 클라이언트 서버 제작
 
